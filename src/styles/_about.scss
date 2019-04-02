@@ -1,0 +1,19 @@
+
+.section-about {
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(255, 255, 255, 0.7)),to(rgba(255, 255, 255, 0.7))),url(img/banner.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)),url(img/banner.png);
+}
+
+.about-text{
+    padding-top: 30px;
+    text-align: center;
+}
+.long-text{
+    font-size: 100%;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+.video-screen{
+    width: 100%;
+    height: 300px;
+}

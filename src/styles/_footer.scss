@@ -1,0 +1,64 @@
+
+footer{
+    background-color: #7e80d9;
+}
+
+.footer-nav{
+    padding-top: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+.footer-nav li{
+    display: inline-block;
+    padding-left: 30px;
+}
+
+.footer-nav li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-text{
+    color: #fff;
+}
+.footer-text:first-child{
+    float: left;
+}
+
+.footer-text:last-child{
+    float: right;
+}
+/* ----------------------------------- */
+/* FOOTER ICON LIST */
+/* ----------------------------------- */
+
+
+.footer-icon-list {
+    padding: 10px;
+    text-align: center;
+}
+.footer-icon-list ion-icon {
+    font-size: 180%;
+    color: #fff;
+}
+.footer-icon-list li{
+    list-style: none;
+    display: inline-block;
+}
+
+.icon-facebook,
+.icon-insta{
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.icon-facebook:hover,
+.icon-facebook:active{
+    color: #3b5998;
+}
+
+.icon-insta:hover,
+.icon-insta:active{
+    color:#e95950;
+}

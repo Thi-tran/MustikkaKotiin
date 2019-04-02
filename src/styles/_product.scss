@@ -1,0 +1,40 @@
+.product-box {
+    padding: 10px 0; 
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.section-product{
+    text-align: center;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(255, 255, 255, 0.7)),to(rgba(255, 255, 255, 0.7))),url(img/banner.png);
+}
+.product-image {
+    width: 100%;
+    max-height: 300px;
+}
+
+.quantity-product{
+}
+.quantity-box{
+}
+
+.quantity-button:link,
+.quantity-button:visited{
+    text-decoration: none;
+    color: #3336ad;
+    padding: 2px 15px;
+    background-color: rgba(214, 247, 45, 0.43);
+    border-radius: 200px;
+    -webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.quantity-button:active,
+.quantity-button:hover{
+    background-color: #3c40c6;
+    color: #fff;
+}
+
+.quantity-button a{
+    text-decoration: none;
+}

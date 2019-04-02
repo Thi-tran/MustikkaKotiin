@@ -1,3 +1,18 @@
+@import './styles/_reusable-component.scss';
+
+@import './styles/_navbar.scss';
+@import './styles/_header.scss';
+@import './styles/_about.scss';
+@import './styles/_steps.scss';
+@import './styles/_pics.scss';
+@import './styles/_product.scss';
+@import './styles/_testimonials.scss';
+@import './styles/_question.scss';
+@import './styles/_footer.scss';
+
+@import './styles/vendors/Grid.css';
+@import './styles/vendors/normalize.css';
+
 body {
   margin: 0;
   padding: 0;

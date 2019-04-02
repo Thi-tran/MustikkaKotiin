@@ -1,0 +1,54 @@
+
+.section-question{
+    background-color: rgba(252, 252, 252, 0.4);
+}
+.question-picture {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #ccc;
+}
+
+input[type=text],
+input[type=email],
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea{
+    height: 100px;
+}
+
+.testimonial-index {
+    padding: 0;
+}
+
+input[type=submit]{
+    float: right;
+    font-size: 120%;
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: #d1d1d1;
+    color: #3336ad;
+    font-family:"Playfair-Display"; 
+    -webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+input[type=submit]:hover,
+input[type=submit]:active{ 
+    background-color: #3c40c6;
+    color: #fff;
+}
+
+.contact-form{
+    margin-top: 30px;
+}
+
+.send-btn{
+    margin-top: 20px;
+}
