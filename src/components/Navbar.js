@@ -196,7 +196,7 @@ class NavbarHomePage extends Component {
                     }
                     )}
                   </div>
-                <h5 className="text-center">Please fill out your order info</h5>
+                <h5 className="text-center">Tilauksen teidot</h5>
                   <form class="form-horizontal mx-auto">
                     <div class="form-group">
                         <div class="col">
@@ -249,7 +249,7 @@ class NavbarHomePage extends Component {
                             </div>
                         </fieldset>
                         <fieldset class="form-group" required>
-                            <label for="exampleInputEmail1">Prefered delivery time</label>
+                            <label for="exampleInputEmail1">Ensisijainen toimitusaika</label>
                             <div class="row">
                               <div class="form-check mx-1">
                                   <input class="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
@@ -296,7 +296,7 @@ class NavbarHomePage extends Component {
 
               {orderSent && <SnackBar 
                 open={orderSent}
-                message="Order sent"
+                message="Tilauksesi on vastaanotettu!"
                 variant="success"
                 vertical="bottom"
                 horizontal="left"

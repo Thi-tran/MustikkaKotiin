@@ -113,7 +113,7 @@ class HomePage extends Component {
 
                 {savedOrder && <SnackBar 
                     open={savedOrder}
-                    message="Let's finish your order :)"
+                    message="Suorita tilauksesi :)"
                     variant="info"
                     vertical="bottom"
                     horizontal="right"

@@ -42,7 +42,7 @@ class Question extends Component {
                 
                 <div className="row">
                     <div className="span-1-of-3 question-picture-part">
-                        <img src={mePic} className="question-picture ml-5" />
+                        <img src={mePic} className="question-picture" />
                     </div>
                     <div className="span-2-of-3">
                     <form class="form-horizontal mx-auto" onSubmit={(e) => this.onSubmit(e)} >
@@ -81,7 +81,7 @@ class Question extends Component {
                 </div>
                 {snackbar && <SnackBar 
                     open={snackbar}
-                    message="Added question"
+                    message="Kysymyksesi on lähetetty"
                     variant="success"
                     vertical="bottom"
                     horizontal="left"
