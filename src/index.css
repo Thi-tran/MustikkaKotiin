@@ -12,7 +12,7 @@
 
 @import './styles/vendors/Grid.css';
 @import './styles/vendors/normalize.css';
-
+@import './styles/_queries.scss';
 body {
   margin: 0;
   padding: 0;

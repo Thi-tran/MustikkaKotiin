@@ -12,6 +12,7 @@
 
 input[type=text],
 input[type=email],
+input[type=number],
 textarea{
     width: 100%;
     padding: 7px;
@@ -29,7 +30,6 @@ textarea{
 
 input[type=submit]{
     float: right;
-    font-size: 120%;
     border-radius: 10px;
     padding: 5px 20px;
     background-color: #d1d1d1;
@@ -51,4 +51,8 @@ input[type=submit]:active{
 
 .send-btn{
     margin-top: 20px;
+}
+
+.question-row{
+    justify-content: space-between;
 }

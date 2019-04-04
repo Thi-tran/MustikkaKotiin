@@ -3,8 +3,9 @@ import logo from '../styles/img/logo.png';
 import ProductOrder from './ProductOrder';
 import {addOrder} from '../firebase';
 
+import { Navbar, Nav } from 'react-bootstrap';
+
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Scrollchor from 'react-scrollchor';
 import Dialog from '@material-ui/core/Dialog';
@@ -14,7 +15,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
+import SnackBar from './SnackBar';
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -36,21 +37,6 @@ const styles = theme => ({
 
 });
 
-const ranges = [
-  {
-    value: 'Helsinki',
-    label: 'Helsinki',
-  },
-  {
-    value: 'Vantaa',
-    label: 'Vantaa',
-  },
-  {
-    value: 'Espoo',
-    label: 'Espoo',
-  },
-];
-
 const initalState = {
   open: false,
   city: '',
@@ -62,14 +48,16 @@ const initalState = {
     a9to11: false,
     a14to16: false,
     a18to20: false
-  }
+  },
+  
 }
-class Navbar extends Component {
+class NavbarHomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       ...initalState,
-      orderList: this.props.orderList, 
+      orderList: this.props.orderList,
+      orderSent: false, 
     }
   }
   
@@ -121,50 +109,69 @@ class Navbar extends Component {
     this.setState({
       ...initalState,   
       orderList: this.props.orderList,
+      orderSent: true,
     });
 
   }
 
     render() {
       const {classes, makeOrder} = this.props;
-      const { orderList, name, city, number, address, post } = this.state;
+      const { orderList, name, city, number, address, post, orderSent } = this.state;
 
       return (
-          <div className="sticktop">
+          <span >
           {/* Nav bar */}
-          <nav className="navbar navbar-expand-md navbar-light navcolor sticky-top">
-            <div className="container-fluid nav-container">
-              <Scrollchor to="#Home" animate={{offset: -150, duration: 600}} className="navbar-brand navbar ml-4"><img src={logo} className="logo" alt="logo"/></Scrollchor>
+            <Navbar collapseOnSelect="true" bg="white" expand="lg" sticky="top" >
+              <Navbar.Brand className="mr-0">
+                  <Scrollchor to="#Home" animate={{offset: -150, duration: 600}} className="navbar-brand navbar ml-2">
+                      <img src={logo} className="logo" alt="logo"/>
+                  </Scrollchor>
+              </Navbar.Brand>
+              
+              <Nav className="mr-auto">
+              </Nav>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav ">
+                  <Nav className="main-nav pr-2">
+                      <Nav.Link>
+                          <li className="nav-item"  className="ml-2">
+                          <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
+                          </li>
+                      </Nav.Link>
 
-              <button className="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse navcolor" id="navbarResponsive">
-                <ul className="main-nav">
-                  <li className="nav-item">
-                      <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
-                  </li>
-                  <li className="nav-item">
-                      <Scrollchor to="#Contact" animate={{offset: -50, duration: 600}} className="nav-text">Tilaa</Scrollchor>
-                  </li>
-                  <li className="nav-item">
-                      <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="nav-text">Mustikat</Scrollchor>
-                  </li>
-                  <li className="nav-item">
-                      <Scrollchor to="#Testimonial" animate={{offset: -50, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
-                  </li>
-                  <li className="nav-item">
-                    <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
-                  </li>
-                  <li className="nav-item">
-                    { (!makeOrder) ? <img src='img/basket.svg' className=" basket-logo" onClick={this.onCheckCart}/> 
-                      : <img src='img/basket-withOrder.svg' className=" basket-logo" onClick={this.onCheckCart}/>
-                    }
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                      <Nav.Link>
+                          <li className="nav-item" className="ml-2 ">
+                              <Scrollchor to="#Contact" animate={{offset: -50, duration: 600}} className="nav-text">Tilaa</Scrollchor>
+                          </li>
+                      </Nav.Link>
+
+                      <Nav.Link>
+                          <li className="nav-item" className="ml-2">
+                              <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="nav-text">Mustikat</Scrollchor>
+                          </li>
+                      </Nav.Link>
+
+                      <Nav.Link>
+                          <li className="nav-item" className="ml-2">
+                              <Scrollchor to="#Testimonial" animate={{offset: -70, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
+                          </li>
+                      </Nav.Link>
+                      
+                      <Nav.Link>
+                          <li className="nav-item" className="ml-2">
+                              <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
+                          </li>
+                      </Nav.Link>
+                  </Nav>
+              </Navbar.Collapse>
+              <Nav className="">
+                  <li className="nav-item pr-2 ml-2">
+                      { (!makeOrder) ? <img src='img/basket.svg' className=" basket-logo" onClick={this.onCheckCart}/> 
+                        : <img src='img/basket-withOrder.svg' className=" basket-logo" onClick={this.onCheckCart}/>
+                      }
+                  </li>            
+              </Nav>
+          </Navbar>
 
           {/* Order Dialog */}
           {(makeOrder) ? (
@@ -173,7 +180,7 @@ class Navbar extends Component {
               onClose={() => {this.setState({open:false})}}
               aria-labelledby="form-dialog-title"
             >
-            <DialogTitle id="form-dialog-title">Ostoskori</DialogTitle>
+            <DialogTitle id="form-dialog-title py-0">Ostoskori</DialogTitle>
             <DialogContent>
                   <div className="row">
                     {orderList.map((order) => {
@@ -193,26 +200,22 @@ class Navbar extends Component {
                   <form class="form-horizontal mx-auto">
                     <div class="form-group">
                         <div class="col">
-                            <label for="exampleInputEmail1">Nimi</label>
-                            <input type="text" class="form-control" required
+                            <input type="text" class="form-control mb-2" required placeholder="Nimi"
                               name="name" value={name} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
                         <div class="col">
-                            <label for="exampleInputEmail1">Puhelinnumero</label>
-                            <input type="number" class="form-control" required
+                            <input type="number" class="form-control mb-2" required placeholder="Puhelinnumero"
                               name="number" value={number} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
                         <div class="col">
-                            <label for="exampleInputEmail1">Osoite</label>
-                            <input type="text" class="form-control" required
+                            <input type="text" class="form-control mb-2" required placeholder="Osoite"
                               name="address" value={address} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
                         <div class="col">
-                            <label for="exampleInputEmail1">Postikoodi</label>
-                            <input type="number" class="form-control" required
+                            <input type="number" class="form-control mb-2" required placeholder="Postinumero"
                               name="post" value={post} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
@@ -220,7 +223,7 @@ class Navbar extends Component {
                             <label for="exampleInputEmail1">Kaupunki</label>
                             <div class="row">
                               <div class="form-check mx-1">
-                                  <input class="form-check-input" type="radio" 
+                                  <input class="form-check-input" type="radio" name="is_city"
                                     onChange={(e) => {this.setState({city: 'Helsinki'})}}
                                   />
                                   <label class="form-check-label" for="gridRadios1">
@@ -228,7 +231,7 @@ class Navbar extends Component {
                                   </label>
                               </div>
                               <div class="form-check mx-1">
-                                  <input class="form-check-input" type="radio" 
+                                  <input class="form-check-input" type="radio" name="is_city"
                                     onChange={(e) => {this.setState({city: 'Espoo'})}}
                                   />
                                   <label class="form-check-label" for="gridRadios2">
@@ -236,7 +239,7 @@ class Navbar extends Component {
                                   </label>
                               </div>
                               <div class="form-check mx-1">
-                                  <input class="form-check-input" type="radio" 
+                                  <input class="form-check-input" type="radio" name="is_city"
                                     value="vantaa" onChange={(e) => {this.setState({city: 'Vantaa'})}}
                                   />
                                   <label class="form-check-label" for="gridRadios2">
@@ -268,7 +271,6 @@ class Navbar extends Component {
                               </div>
                             </div>
                         </fieldset>
-
                     </div>
                   </form>
 
@@ -291,13 +293,21 @@ class Navbar extends Component {
               <DialogTitle id="form-dialog-title">Tyhjä ostoskori</DialogTitle>
               </Dialog>
               )}
-          </div>
+
+              {orderSent && <SnackBar 
+                open={orderSent}
+                message="Order sent"
+                variant="success"
+                vertical="bottom"
+                horizontal="left"
+              />}
+          </span>
         );
     }
 }
 
-Navbar.propTypes = {
+NavbarHomePage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Navbar);
+export default withStyles(styles)(NavbarHomePage);

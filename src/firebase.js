@@ -18,3 +18,9 @@ export const addOrder = (name, address, post, number, city, deliverTime, orderLi
         name, address, post, number, city, deliverTime, orderList
     })
 }
+
+export const addQuestion = (name, email, question) => {
+    database.ref(`question`).push({
+        name, email, question
+    })
+}

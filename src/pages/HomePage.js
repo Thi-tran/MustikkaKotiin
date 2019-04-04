@@ -8,7 +8,7 @@ import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
 import Question from '../components/Question';
 import Footer from '../components/Footer';
-
+import SnackBar from '../components/SnackBar';
 import {initalProductList} from '../materials/itemList';
 import {initalOrderList} from '../materials/itemList';
 export const UserContext = React.createContext();
@@ -20,10 +20,34 @@ class HomePage extends Component {
         this.state = {
             productList: initalProductList,
             orderList: initalOrderList,
-            makeOrder: false
+            makeOrder: '',
+            savedOrder : '',
         }
     }
-    
+    componentDidMount() {
+        const localMakeOrder = localStorage.getItem('savedOrder');
+
+        let makeOrder = false;
+        let savedOrder = false;
+        if (localMakeOrder === "true") {
+            makeOrder = true;
+            savedOrder = true;
+        } 
+
+        const orderList = this.state.orderList;
+
+        // loop over products to find how much boxes are ordered in each prod
+        for (let i = 0; i < orderList.length ; i ++ ){
+            orderList[i].order = localStorage.getItem(`order-${i}`);
+        }
+
+        this.setState({
+            makeOrder,
+            savedOrder,
+            orderList
+        });
+
+    }
     onHandleAddBox = (id) => {
         const productList = this.state.productList ;
         productList[`${id}`].numBox ++;
@@ -49,7 +73,10 @@ class HomePage extends Component {
             makeOrder: true
         })
         setTimeout(()=> {console.log(orderList)}, 100)
+
         // Local Storage stuff 
+        localStorage.setItem('savedOrder', true);
+        localStorage.setItem(`order-${id}`,productList[`${id}`].numBox);
     }
  
     resetOrder = () => {
@@ -58,9 +85,11 @@ class HomePage extends Component {
             makeOrder: false
         });
 
+        localStorage.setItem('savedOrder', false);
+
     }
     render() {
-        const {productList, orderList, makeOrder} = this.state;
+        const {productList, orderList, makeOrder, savedOrder} = this.state;
         const {onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart} = this;
         return (
             <div className="scrolling-box">
@@ -81,6 +110,14 @@ class HomePage extends Component {
                     <Question />
                     <Footer />
                 </UserContext.Provider>  
+
+                {savedOrder && <SnackBar 
+                    open={savedOrder}
+                    message="Let's finish your order :)"
+                    variant="info"
+                    vertical="bottom"
+                    horizontal="right"
+                />}
             </div>
         );
     }
