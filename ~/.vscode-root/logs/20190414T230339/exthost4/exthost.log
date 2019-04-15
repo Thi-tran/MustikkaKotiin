@@ -1,0 +1,56 @@
+[2019-04-15 13:32:40.053] [exthost] [info] extension host started
+[2019-04-15 13:32:40.092] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.092] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/debug-auto-launch/dist/extension
+[2019-04-15 13:32:40.100] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.100] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/emmet/dist/extension
+[2019-04-15 13:32:40.120] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.120] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/git/dist/main
+[2019-04-15 13:32:40.224] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.224] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/merge-conflict/dist/extension
+[2019-04-15 13:32:40.233] [exthost] [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.233] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/christian-kohler.path-intellisense-1.4.2/out/src/extension
+[2019-04-15 13:32:40.257] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.257] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2019-04-15 13:32:40.294] [exthost] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.294] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/esbenp.prettier-vscode-1.8.1/out/src/extension
+[2019-04-15 13:32:40.490] [exthost] [info] ExtensionService#_doActivateExtension seunghwan.smartsemicolon {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:32:40.490] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/seunghwan.smartsemicolon-1.0.3/out/src/extension
+[2019-04-15 13:32:40.496] [exthost] [info] eager extensions activated
+[2019-04-15 13:33:04.409] [exthost] [info] extension host started
+[2019-04-15 13:33:04.461] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.461] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/debug-auto-launch/dist/extension
+[2019-04-15 13:33:04.469] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.469] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/emmet/dist/extension
+[2019-04-15 13:33:04.500] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.500] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/git/dist/main
+[2019-04-15 13:33:04.633] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.634] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/merge-conflict/dist/extension
+[2019-04-15 13:33:04.644] [exthost] [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.644] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/christian-kohler.path-intellisense-1.4.2/out/src/extension
+[2019-04-15 13:33:04.664] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.664] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2019-04-15 13:33:04.700] [exthost] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.700] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/esbenp.prettier-vscode-1.8.1/out/src/extension
+[2019-04-15 13:33:04.943] [exthost] [info] ExtensionService#_doActivateExtension seunghwan.smartsemicolon {"startup":true,"activationEvent":"*"}
+[2019-04-15 13:33:04.943] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/seunghwan.smartsemicolon-1.0.3/out/src/extension
+[2019-04-15 13:33:05.750] [exthost] [info] eager extensions activated
+[2019-04-15 13:33:07.028] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2019-04-15 13:33:07.028] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/typescript-language-features/dist/extension
+[2019-04-15 13:33:07.120] [exthost] [info] ExtensionService#_doActivateExtension mgmcdermott.vscode-language-babel {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2019-04-15 13:33:07.120] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/mgmcdermott.vscode-language-babel-0.0.22/dist/extension
+[2019-04-15 13:33:07.122] [exthost] [info] ExtensionService#_doActivateExtension sourcegraph.javascript-typescript {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2019-04-15 13:33:07.125] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/sourcegraph.javascript-typescript-0.0.7/out/extension
+[2019-04-15 13:36:44.608] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-04-15 13:36:44.609] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/configuration-editing/dist/extension
+[2019-04-15 13:36:44.640] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-04-15 13:36:44.640] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-04-15 13:40:33.674] [exthost] [info] ExtensionService#_doActivateExtension vscode.css-language-features {"startup":false,"activationEvent":"onLanguage:scss"}
+[2019-04-15 13:40:33.674] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/css-language-features/client/dist/cssMain
+[2019-04-15 13:42:33.816] [exthost] [info] ExtensionService#_doActivateExtension vscode.html-language-features {"startup":false,"activationEvent":"onLanguage:html"}
+[2019-04-15 13:42:33.816] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/html-language-features/client/dist/htmlMain
+[2019-04-15 14:01:22.394] [exthost] [info] ExtensionService#_doActivateExtension vmsynkov.colonize {"startup":false,"activationEvent":"onCommand:colonize.endline"}
+[2019-04-15 14:01:22.395] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/vmsynkov.colonize-2.2.2/extension
+[2019-04-15 15:19:14.611] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2019-04-15 15:19:14.611] [exthost] [info] ExtensionService#loadCommonJSModule /private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/extensions/extension-editing/dist/extension
+[2019-04-15 15:19:14.766] [exthost] [info] ExtensionService#_doActivateExtension steoates.autoimport {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2019-04-15 15:19:14.766] [exthost] [info] ExtensionService#loadCommonJSModule /Users/thitran/.vscode/extensions/steoates.autoimport-1.5.3/out/src/extension

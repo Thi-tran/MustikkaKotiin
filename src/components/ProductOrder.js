@@ -46,8 +46,8 @@ class ProductOrder extends Component {
     
 
     render() {
-        const { classes, id, title, mainPic, order, onHandleDecBox, onHandleIncBox, onHandleRemoveBox } = this.props;
-
+        const { classes, id, title, mainPic, order, onHandleDecBox, onHandleIncBox, onHandleRemoveBox, price } = this.props;
+        const total = price * order; 
         return (
 
             <div className="span-1-of-2 mb-3 mx-1">
@@ -62,6 +62,10 @@ class ProductOrder extends Component {
                         <Typography gutterBottom variant="h5" component="h4" className={classes.title}>
                         {title}
                         </Typography>
+                        <Typography gutterBottom variant="h9" component="h6" className={classes.title}>
+                        {total} €
+                        </Typography>
+
                         </CardContent>
 
                     </CardActionArea>
@@ -74,7 +78,7 @@ class ProductOrder extends Component {
                                 <AddIcon onClick={() => onHandleIncBox(id)}/>
                             </Fab>
                             <Fab size="small" aria-label="Remove" className="mx-1">
-                                <RemoveIcon onClick={() => onHandleDecBox(id)}/>
+                                {(order > 1) && <RemoveIcon onClick={() => onHandleDecBox(id)}/>}
                             </Fab>
                             <IconButton aria-label="Delete">
                                 <DeleteIcon onClick={() => onHandleRemoveBox(id)}/>

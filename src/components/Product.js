@@ -16,7 +16,8 @@ import { UserContext } from '../pages/HomePage';
 
 const styles = theme => ({
     card: {
-      maxWidth: 600,
+        maxWidth: '70%',
+        margin: '0 auto'
     },
     media: {
       height: 0,
@@ -28,12 +29,12 @@ const styles = theme => ({
 class Product extends Component {
     render() {
         const { classes } = this.props;
-        const {id, title, mainPic, description, pics, numBox} = this.props
+        const {id, title, mainPic, description, price, numBox} = this.props
         return (
             <UserContext.Consumer>
             {({onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart}) => 
-                <div className="col span-1-of-2 mb-3">
-                    <Card className={classes.card}>
+                <div className="col mb-3">
+                    <Card className="card">
                         <CardHeader
                             title={title}
                         />
@@ -42,11 +43,17 @@ class Product extends Component {
                             image={mainPic}
                             title={title}
                         />
-                        <CardContent>
+                        <CardContent className="card-description">
                             <Typography component="p">
                                 {description}                        
                             </Typography>
                         </CardContent>
+                        <CardContent>
+                            <Typography component="p">
+                                 {price} €                        
+                            </Typography>
+                        </CardContent>
+
                         <CardActions>
                             <div className="mx-auto">
                                 <TextField value={numBox} style={{width: '28px'}} className="mr-2"></TextField>

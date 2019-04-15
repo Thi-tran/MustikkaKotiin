@@ -1,3 +1,68 @@
+@media only screen and (max-width:1200px){
+    .card{
+        min-width: 90%;
+    }
+    .card-description{
+        min-height: 160px;
+    }
+
+}
+
+@media only screen and (max-width:1024px){
+    .step-pic{
+        height: 270px;
+    }
+
+    .testimonial-box{
+        padding-left: 30px;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=number],
+    textarea{
+        width: 100%;
+        padding: 3px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: medium;
+    }
+
+    textarea{
+        height: 70px;
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    .card-container{
+        display: block;
+    }
+    .card-description{
+        min-height: 100px;
+    }
+
+    .steps-container{
+        display: block;
+    }
+    .step-pic{
+        height: 350px;
+    }
+
+    .double-pics{
+        display: flex;
+        width: 200%;
+    }
+
+    .testimonial-container{
+        display:block;
+    }
+    .testimonial-box{
+        padding-left: 30px;
+    }
+}
+
+
 @media only screen and (max-width:480px){
     section{
         padding: 0 10px;
@@ -15,4 +80,31 @@
     .step-pic{
         height: 200px;
     }
+
+    .card{
+        min-width: 90%;
+    }
+
+
+
+    .question-picture{
+        margin-bottom: 20px;
+    }
+
+    .question-input-container{
+        padding-left: 5px;
+    }
+
+    .question-btn{
+        text-align: center;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=number],
+    textarea{
+        padding: 5px;
+        font-size: large;
+
+    }
+
 }

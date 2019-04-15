@@ -1,0 +1,8 @@
+[2019-04-15 13:32:39.905] [renderer4] [info] no standard startup: not the explorer viewlet
+[2019-04-15 13:33:04.095] [renderer4] [info] no standard startup: not just one text editor
+[2019-04-15 14:38:40.216] [renderer4] [error] An unknown error occurred. Please consult the log for more details.
+[2019-04-15 15:10:03.589] [renderer4] [error] Cannot read property 'isFullScreen' of null: TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)

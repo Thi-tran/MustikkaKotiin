@@ -13,10 +13,10 @@ class Products extends Component {
         return (
             <section className="section-product" id="Product">
                 <div className="row">
-                    <h2 className="mx-auto">Hakea Teidän marjat</h2>
+                    <h2 className="mx-auto">Toimitamme Marjat Kotiin</h2>
                 </div>
 
-                <div className="row">
+                <div className="row card-container">
                     {productList.map((product) => (
                         <Product 
                             key={product.id}

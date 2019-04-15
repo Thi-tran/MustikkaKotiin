@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import mePic from '../styles/img/me.jpg';
 import {addQuestion} from '../firebase';
 import SnackBar from './SnackBar';
+import Fab from '@material-ui/core/Fab';
+
 const initialState={
     name: '',
     email: '',
@@ -41,10 +43,10 @@ class Question extends Component {
                 </div>
                 
                 <div className="row">
-                    <div className="span-1-of-3 question-picture-part">
+                    <div className="span-1-of-3">
                         <img src={mePic} className="question-picture" />
                     </div>
-                    <div className="span-2-of-3">
+                    <div className="span-2-of-3 question-input-container">
                     <form class="form-horizontal mx-auto" onSubmit={(e) => this.onSubmit(e)} >
                         <div class="form-group">
                         <div className="row mb-2">
@@ -65,15 +67,11 @@ class Question extends Component {
                             ></textarea>
                         </div>
 
-                        <div className="row send-btn">
-                            <div className="col span-2-of-3">
-                                <label>&nbsp;</label>
+                            <div className="question-btn">
+                                <Fab type="submit" variant="extended" color="primary" aria-label="Add" >
+                                    LAHETA
+                                </Fab>
                             </div>
-                            
-                            <div className="col span-1-of-3 pr-0">
-                                <input type="submit" value="LAHETA" className="btn btn-primary"/>
-                            </div>
-                        </div>
                         </div>
                     </form>
 

@@ -118,7 +118,7 @@ const variantIcon = {
           <Snackbar
             anchorOrigin={anchor}
             open={this.state.open}
-            autoHideDuration={6000}
+            autoHideDuration={4000}
             onClose={this.handleClose}
           >
             <MySnackbarContentWrapper

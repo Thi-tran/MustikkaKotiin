@@ -1,0 +1,58 @@
+[2019-04-14 23:03:39.771] [main] [info] update#setState idle
+[2019-04-14 23:04:09.775] [main] [info] update#setState checking for updates
+[2019-04-14 23:04:09.943] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-14 23:04:09.943] [main] [info] update#setState idle
+[2019-04-15 00:04:09.973] [main] [info] update#setState checking for updates
+[2019-04-15 00:04:11.322] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 00:04:11.323] [main] [info] update#setState idle
+[2019-04-15 01:04:30.097] [main] [info] update#setState checking for updates
+[2019-04-15 01:04:30.403] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 01:04:30.403] [main] [info] update#setState idle
+[2019-04-15 06:27:45.147] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 06:27:45.147] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:136:13)
+    at Screen.emit (events.js:217:7)
+[2019-04-15 06:46:09.499] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 06:46:09.500] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:136:13)
+    at Screen.emit (events.js:217:7)
+[2019-04-15 07:10:44.533] [main] [info] update#setState checking for updates
+[2019-04-15 07:10:44.710] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 07:10:44.710] [main] [info] update#setState idle
+[2019-04-15 08:05:03.685] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 08:05:03.686] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)
+[2019-04-15 08:40:29.663] [main] [info] update#setState checking for updates
+[2019-04-15 08:40:29.975] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 08:40:29.975] [main] [info] update#setState idle
+[2019-04-15 09:44:29.572] [main] [info] update#setState checking for updates
+[2019-04-15 09:44:29.827] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 09:44:29.827] [main] [info] update#setState idle
+[2019-04-15 10:59:54.023] [main] [info] update#setState checking for updates
+[2019-04-15 10:59:54.611] [main] [error] UpdateService error: The Internet connection appears to be offline.
+[2019-04-15 10:59:54.611] [main] [info] update#setState idle
+[2019-04-15 13:04:32.750] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 13:04:32.750] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)
+[2019-04-15 13:34:00.489] [main] [info] update#setState checking for updates
+[2019-04-15 13:34:00.675] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 13:34:00.675] [main] [info] update#setState idle
+[2019-04-15 14:34:00.609] [main] [info] update#setState checking for updates
+[2019-04-15 14:34:00.868] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 14:34:00.868] [main] [info] update#setState idle
+[2019-04-15 15:10:02.945] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 15:10:02.946] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)

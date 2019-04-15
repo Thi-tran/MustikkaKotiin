@@ -3,7 +3,7 @@
     background-color: rgba(252, 252, 252, 0.4);
 }
 .question-picture {
-    width: 250px;
+    width: 70%;
     height: auto;
     border-radius: 50%;
     display: inline-block;
@@ -16,7 +16,7 @@ input[type=email],
 input[type=number],
 textarea{
     width: 100%;
-    padding: 7px;
+    padding: 5px;
     border-radius: 3px;
     border: 1px solid #ccc;
 }
@@ -56,4 +56,12 @@ input[type=submit]:active{
 
 .question-row{
     justify-content: space-between;
+}
+
+.question-btn{
+    text-align: right;
+}
+
+.question-input-container{
+    padding-left: 1rem;
 }
