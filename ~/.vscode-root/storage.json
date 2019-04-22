@@ -706,8 +706,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1181,9 +1180,10 @@
             }
         }
     },
-    "pickerWorkingDir": "/Users/thitran/Documents/2019/shit-projects-for-react",
+    "pickerWorkingDir": "/Users/thitran/Documents/2019/tic-tac-toe",
     "openedPathsList": {
         "workspaces2": [
+            "file:///Users/thitran/Documents/2019/tic-tac-toe/tic-tac-toe",
             "file:///Users/thitran/Documents/2019/shit-projects-for-react/mustikkakotiin",
             "file:///Users/thitran/Documents/2019/shit-projects-for-react/WORKING-PROJECT-MustikkaKotiin-Website"
         ],

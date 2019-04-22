@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -17,7 +16,6 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Fab from '@material-ui/core/Fab';
 
-import { UserContext } from '../pages/HomePage';
 
 
 const styles = theme => ({
@@ -39,12 +37,6 @@ const styles = theme => ({
   
 class ProductOrder extends Component {
     
-    constructor(props) {
-        super(props);
-
-    }
-    
-
     render() {
         const { classes, id, title, mainPic, order, onHandleDecBox, onHandleIncBox, onHandleRemoveBox, price } = this.props;
         const total = price * order; 

@@ -6,3 +6,13 @@
     at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
     at emitThree (events.js:141:20)
     at Screen.emit (events.js:217:7)
+[2019-04-15 16:01:25.803] [renderer4] [error] Cannot read property 'isFullScreen' of null: TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)
+[2019-04-15 19:02:23.939] [renderer4] [error] Cannot read property 'isFullScreen' of null: TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)

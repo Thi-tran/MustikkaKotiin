@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import mePic from '../styles/img/me.jpg';
-import {addQuestion} from '../firebase';
+
 import SnackBar from './SnackBar';
 import Fab from '@material-ui/core/Fab';
 
@@ -26,7 +26,7 @@ class Question extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const {name, email, question} = this.state;
+
         // addQuestion(name, email, question);
         this.setState({
             ...initialState,
@@ -44,7 +44,7 @@ class Question extends Component {
                 
                 <div className="row">
                     <div className="span-1-of-3">
-                        <img src={mePic} className="question-picture" />
+                        <img src={mePic} className="question-picture" alt="mypic"/>
                     </div>
                     <div className="span-2-of-3 question-input-container">
                     <form class="form-horizontal mx-auto" onSubmit={(e) => this.onSubmit(e)} >
@@ -66,12 +66,12 @@ class Question extends Component {
                                 value={this.state.question} onChange={(e)=> {this.onChange(e)}}
                             ></textarea>
                         </div>
-
-                            <div className="question-btn">
-                                <Fab type="submit" variant="extended" color="primary" aria-label="Add" >
-                                    LAHETA
-                                </Fab>
-                            </div>
+                        
+                        <div className="question-btn">
+                            <Fab type="submit" variant="extended" color="primary" aria-label="Add" >
+                                LAHETA
+                            </Fab>
+                        </div>
                         </div>
                     </form>
 

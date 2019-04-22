@@ -11,7 +11,7 @@ footer{
 
 .footer-nav li{
     display: inline-block;
-    padding-left: 30px;
+    padding: 0 15px;
 }
 
 .footer-nav li a{
@@ -22,6 +22,7 @@ footer{
 
 .footer-text{
     color: #fff;
+    font-size: 1.5vw;
 }
 .footer-text:first-child{
     float: left;
@@ -29,6 +30,10 @@ footer{
 
 .footer-text:last-child{
     float: right;
+}
+
+.nav-text{
+    font-size: 1.5vw;
 }
 /* ----------------------------------- */
 /* FOOTER ICON LIST */

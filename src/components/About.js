@@ -10,7 +10,7 @@ class About extends Component {
                     </div>   
         
                     <div className="about-video">
-                        <iframe src="https://player.vimeo.com/video/278542493" frameBorder="none" className="video-screen"></iframe>
+                        <iframe src="https://player.vimeo.com/video/278542493" frameBorder="none" className="video-screen" title="video"></iframe>
                     </div>
                     
                     <div className="about-text">

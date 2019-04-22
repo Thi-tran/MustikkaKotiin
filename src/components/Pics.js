@@ -5,7 +5,6 @@ class Pics extends Component {
         return (
             <section className="section-meals" id="meals">
                 <ul className="meals-showcase clearfix">
-                    <div className="double-pics">
                         <li>
                             <figure className="meal-photo">
                                 <img src='img/Meals/1.gif' alt="pic" />
@@ -16,8 +15,6 @@ class Pics extends Component {
                                 <img src='img/Meals/2.jpg' alt="pic" />
                             </figure>
                         </li>
-                    </div>
-                    <div className="double-pics">
                     <li>
                         <figure className="meal-photo">
                             <img src='img/Meals/3.jpg' alt="pic" />
@@ -28,10 +25,9 @@ class Pics extends Component {
                             <img src='img/Meals/4.jpg' alt="pic" />
                         </figure>
                     </li>
-                    </div>
+
                 </ul>
                 <ul className="meals-showcase clearfix">
-                    <div className="double-pics">
                     <li>
                         <figure className="meal-photo">
                             <img src='img/Meals/5.jpg' alt="pic" />
@@ -42,8 +38,7 @@ class Pics extends Component {
                             <img src='img/Meals/6.jpg' alt="pic" />
                         </figure>
                     </li>
-                    </div>
-                    <div className="double-pics">
+
                     <li>
                         <figure className="meal-photo">
                             <img src='img/Meals/7.jpg' alt="pic"/>
@@ -54,7 +49,7 @@ class Pics extends Component {
                             <img src='img/Meals/8.jpg' alt="pic"/>
                         </figure>
                     </li>
-                    </div>
+
                 </ul>
             </section>        
         );

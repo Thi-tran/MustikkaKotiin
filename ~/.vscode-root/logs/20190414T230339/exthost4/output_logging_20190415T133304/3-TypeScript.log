@@ -74,3 +74,4 @@ Error: No Project.
     at readableAddChunk (_stream_readable.js:250:11)
     at Socket.Readable.push (_stream_readable.js:208:10)
     at Pipe.onread (net.js:594:20)
+[Info  - 7:04:56 PM] TSServer exited

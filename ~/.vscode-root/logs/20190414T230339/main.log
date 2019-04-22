@@ -56,3 +56,21 @@
     at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
     at emitThree (events.js:141:20)
     at Screen.emit (events.js:217:7)
+[2019-04-15 15:34:00.724] [main] [info] update#setState checking for updates
+[2019-04-15 15:34:00.908] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 15:34:00.908] [main] [info] update#setState idle
+[2019-04-15 16:01:25.798] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 16:01:25.798] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)
+[2019-04-15 16:58:16.749] [main] [info] update#setState checking for updates
+[2019-04-15 16:58:17.194] [main] [error] UpdateService error: Cannot update while running on a read-only volume. The application is on a read-only volume. Please move the application and try again. If you're on macOS Sierra or later, you'll need to move the application out of the Downloads directory. See https://github.com/Squirrel/Squirrel.Mac/issues/182 for more information.
+[2019-04-15 16:58:17.194] [main] [info] update#setState idle
+[2019-04-15 19:02:23.937] [main] [error] [uncaught exception in main]: TypeError: Cannot read property 'isFullScreen' of null
+[2019-04-15 19:02:23.937] [main] [error] TypeError: Cannot read property 'isFullScreen' of null
+    at C.isFullScreen (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:444:954)
+    at Screen.<anonymous> (/private/var/folders/k6/xq7620354vv_g4vrdfv7rhnr0000gn/T/AppTranslocation/1F97F050-8A55-421B-A792-2CE9D2F7AD22/d/VS-Code.app/Contents/Resources/app/out/vs/code/electron-main/main.js:438:18)
+    at emitThree (events.js:141:20)
+    at Screen.emit (events.js:217:7)

@@ -11,12 +11,12 @@ import Scrollchor from 'react-scrollchor';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
+
 import DialogTitle from '@material-ui/core/DialogTitle';
-import TextField from '@material-ui/core/TextField';
+
 import Button from '@material-ui/core/Button';
 import SnackBar from './SnackBar';
-import withMobileDialog from '@material-ui/core/withMobileDialog';
+
 
 
 const styles = theme => ({
@@ -106,7 +106,7 @@ class NavbarHomePage extends Component {
     localStorage.removeItem(`order-${id}`);
 
     let noOrderLeft = false;
-    this.state.orderList.map(order => {
+    this.state.orderList.forEach(order => {
       if (order.order > 0) noOrderLeft = true;
     })
 
@@ -129,11 +129,11 @@ class NavbarHomePage extends Component {
 
     render() {
       const {classes, makeOrder} = this.props;
-      const { orderList, name, city, number, address, post, orderSent,delivery, email } = this.state;
+      const { orderList, name, number, address, post, orderSent,delivery, email } = this.state;
       let deliveryFee = 0;
-      (delivery == "home") ? deliveryFee = 5 : deliveryFee = 0;
+      (delivery === "home") ? deliveryFee = 5 : deliveryFee = 0;
       let price = 0; 
-      orderList.map(order => {
+      orderList.forEach(order => {
         price += order.order * order.price
       })
       const total = price + deliveryFee;
@@ -153,31 +153,31 @@ class NavbarHomePage extends Component {
               <Navbar.Collapse id="responsive-navbar-nav ">
                   <Nav className="main-nav pr-2">
                       <Nav.Link>
-                          <li className="nav-item"  className="ml-2 pt-1">
+                          <li className="nav-item ml-2 pt-1">
                           <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
                           </li>
                       </Nav.Link>
 
                       <Nav.Link>
-                          <li className="nav-item" className="ml-2 pt-1 ">
+                          <li className="nav-item ml-2 pt-1 ">
                               <Scrollchor to="#Contact" animate={{offset: -50, duration: 600}} className="nav-text">Tilaa</Scrollchor>
                           </li>
                       </Nav.Link>
 
                       <Nav.Link>
-                          <li className="nav-item" className="ml-2 pt-1">
+                          <li className="nav-item ml-2 pt-1">
                               <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="nav-text">Mustikat</Scrollchor>
                           </li>
                       </Nav.Link>
 
                       <Nav.Link>
-                          <li className="nav-item" className="ml-2 pt-1">
+                          <li className="nav-item ml-2 pt-1">
                               <Scrollchor to="#Testimonial" animate={{offset: -70, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
                           </li>
                       </Nav.Link>
                       
                       <Nav.Link>
-                          <li className="nav-item" className="ml-2 pt-1">
+                          <li className="nav-item ml-2 pt-1">
                               <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
                           </li>
                       </Nav.Link>
@@ -185,8 +185,8 @@ class NavbarHomePage extends Component {
               </Navbar.Collapse>
               <Nav className="pb-1">
                   <li className="nav-item pr-2 ml-2">
-                      { (!makeOrder) ? <img src='img/basket.svg' className=" basket-logo" onClick={this.onCheckCart}/> 
-                        : <img src='img/basket-withOrder.svg' className=" basket-logo" onClick={this.onCheckCart}/>
+                      { (!makeOrder) ? <img src='img/basket.svg' alt="no-order" className=" basket-logo" onClick={this.onCheckCart}/> 
+                        : <img src='img/basket-withOrder.svg' alt="has-order" className=" basket-logo" onClick={this.onCheckCart}/>
                       }
                   </li>            
               </Nav>
@@ -209,7 +209,7 @@ class NavbarHomePage extends Component {
               className="classes.content"
             >
                   <div className="row">
-                    {orderList.map((order) => {
+                    {orderList.forEach((order) => {
                       if (order.order > 0) {
                         return <ProductOrder 
                           key={order.id}
@@ -244,7 +244,7 @@ class NavbarHomePage extends Component {
                       </div>
                   </fieldset>
                   <form class="form-horizontal mx-auto">
-                  {(delivery == "home") && (
+                  {(delivery === "home") && (
                     <div class="form-group mb-0">
                         <div class="col">
                             <input type="text" class="form-control mb-2" required placeholder="Nimi"
@@ -323,7 +323,7 @@ class NavbarHomePage extends Component {
                         </fieldset>
                     </div> 
                    )}
-                   {(delivery == "pickup") && (
+                   {(delivery === "pickup") && (
                     <div class="form-group mb-0">
                         <div class="col">
                             <input type="text" class="form-control mb-2" required placeholder="Nimi"
@@ -360,7 +360,7 @@ class NavbarHomePage extends Component {
                         </fieldset>
                     </div>
                    )}
-                   <h2 className="pb-4 pt-0"></h2>
+                   <span className="pb-4 pt-0"></span>
                    <div className="d-flex justify-content-end">Toimistuskulu {deliveryFee} €</div>
                    <h6 className="d-flex justify-content-end">YHDESSÄ <span className="mr-2"></span> <strong>{total} €</strong></h6> 
                    

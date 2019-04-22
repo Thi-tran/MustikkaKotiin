@@ -9,9 +9,7 @@
 }
 
 @media only screen and (max-width:1024px){
-    .step-pic{
-        height: 270px;
-    }
+
 
     .testimonial-box{
         padding-left: 30px;
@@ -46,12 +44,12 @@
         display: block;
     }
     .step-pic{
-        height: 350px;
+        width: 50%;
     }
 
-    .double-pics{
-        display: flex;
-        width: 200%;
+
+    .meals-showcase li{
+        width: 50%;
     }
 
     .testimonial-container{
@@ -60,6 +58,15 @@
     .testimonial-box{
         padding-left: 30px;
     }
+
+    .nav-text{
+        font-size: 2.7vw;
+    }
+
+    .footer-text{
+        font-size: 2.7vw;
+    }
+
 }
 
 
@@ -78,7 +85,7 @@
     }
 
     .step-pic{
-        height: 200px;
+        width: 70%;
     }
 
     .card{
@@ -105,6 +112,14 @@
         padding: 5px;
         font-size: large;
 
+    }
+
+    .nav-text{
+        font-size: 4vw;
+    }
+
+    .footer-text{
+        font-size: 4vw;
     }
 
 }

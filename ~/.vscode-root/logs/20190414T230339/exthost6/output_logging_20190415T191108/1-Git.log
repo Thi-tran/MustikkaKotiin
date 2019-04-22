@@ -1,0 +1,170 @@
+Looking for git in: /usr/local/bin/git
+Using git 2.20.1 from /usr/local/bin/git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /Users/thitran/Documents/2019/tic-tac-toe/tic-tac-toe
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/index.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/server/models/activity.js
+> git ls-files --stage -- src/server/models/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/index.js
+> git ls-files --stage -- src/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/server/models/activity.js
+> git ls-files --stage -- src/server/models/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/server/models/activity.js
+> git ls-files --stage -- src/server/models/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/components/ActivityIcon.js
+> git ls-files --stage -- src/components/
+> git show :src/components/CompleteAct.js
+> git ls-files --stage -- src/components/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/server/models/activity.js
+> git ls-files --stage -- src/server/models/
+> git show :src/index.js
+> git ls-files --stage -- src/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/index.js
+> git ls-files --stage -- src/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/activity.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/components/CompleteAct.js
+> git ls-files --stage -- src/components/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/index.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/components/ActivityIcon.js
+> git ls-files --stage -- src/components/
+> git show :src/components/CompleteAct.js
+> git ls-files --stage -- src/components/
+> git show :src/components/ActivityIcon.js
+> git ls-files --stage -- src/components/
+> git show :src/components/CompleteAct.js
+> git ls-files --stage -- src/components/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/server/models/activity.js
+> git ls-files --stage -- src/server/models/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/activityList.js
+> git ls-files --stage -- src/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/index.js
+> git ls-files --stage -- src/
+> git show :src/components/ActivityIcon.js
+> git ls-files --stage -- src/components/
+> git show :src/server/models/activity.js
+> git ls-files --stage -- src/server/models/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/server/db/mongoose.js
+> git ls-files --stage -- src/server/db/
+> git show :src/App.js
+> git ls-files --stage -- src/
+> git show :src/actions/activity.js
+> git ls-files --stage -- src/actions/
+> git show :src/App.js
+> git ls-files --stage -- src/
