@@ -13,7 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import { UserContext } from '../pages/HomePage';
-
+ 
 const styles = theme => ({
     card: {
         maxWidth: '70%',
