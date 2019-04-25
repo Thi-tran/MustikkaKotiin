@@ -47,8 +47,8 @@ class Question extends Component {
                         <img src={mePic} className="question-picture" alt="mypic"/>
                     </div>
                     <div className="span-2-of-3 question-input-container">
-                    <form class="form-horizontal mx-auto" onSubmit={(e) => this.onSubmit(e)} >
-                        <div class="form-group">
+                    <form className="form-horizontal mx-auto" onSubmit={(e) => this.onSubmit(e)} >
+                        <div className="form-group">
                         <div className="row mb-2">
                             <input type="text" name="name" id="name" placeholder="Nimi" required 
                                 value={this.state.name} onChange={(e)=> {this.onChange(e)}}

@@ -24,6 +24,7 @@ const styles = theme => ({
       },
     media: {
         minHeight: 150,
+        marginHorizontal: 10,
     },    
     icon: {
         margin: theme.spacing.unit,
@@ -42,7 +43,7 @@ class ProductOrder extends Component {
         const total = price * order; 
         return (
 
-            <div className="span-1-of-2 mb-3 mx-1">
+            <div className="span-1-of-2 mb-3 card-product">
                 <Card className={classes.card}>
                     <CardActionArea>
                         <CardMedia

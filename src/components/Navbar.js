@@ -137,6 +137,8 @@ class NavbarHomePage extends Component {
         price += order.order * order.price
       })
       const total = price + deliveryFee;
+
+      console.log(orderList);
       return (
           <span >
           {/* Nav bar */}
@@ -199,123 +201,125 @@ class NavbarHomePage extends Component {
               onClose={() => {this.setState({open:false})}}
               aria-labelledby="form-dialog-title"
               maxWidth='sm'
-              withMobileDialog
+              withmobiledialog
             >
             <DialogTitle 
               id="form-dialog-title pb-0"
               className={classes.dialogTitle}
             >Ostoskori</DialogTitle>
+            
             <DialogContent
               className="classes.content"
             >
-                  <div className="row">
-                    {orderList.forEach((order) => {
-                      if (order.order > 0) {
-                        return <ProductOrder 
-                          key={order.id}
-                          {...order}
-                          onHandleIncBox={this.onHandleIncBox}
-                          onHandleDecBox={this.onHandleDecBox}
-                          onHandleRemoveBox={this.onHandleRemoveBox}
-                        />
-                      }
+                <div className="row">
+                  {orderList.map((order) => {
+                    if (order.order > 0) {
+                      return <ProductOrder 
+                        key={order.id}
+                        {...order}
+                        onHandleIncBox={this.onHandleIncBox}
+                        onHandleDecBox={this.onHandleDecBox}
+                        onHandleRemoveBox={this.onHandleRemoveBox}
+                      />
                     }
-                    )}
-                  </div>
+                  }
+                  )}
+
+                </div>
                 <h5 className="text-center">Tilauksen teidot</h5>
                     <fieldset class="form-group mb-0" required>
-                      <div class="row">
-                        <div class="form-check mx-1">
-                            <input class="form-check-input" type="radio" name="is_city"
+                      <div className="row">
+                        <div className="form-check mx-1">
+                            <input className="form-check-input" type="radio" name="is_city"
                               onChange={(e) => {this.setState({delivery: 'home'})}}
                             />
-                            <label class="form-check-label" for="gridRadios1">
+                            <label className="form-check-label" for="gridRadios1">
                             Kotiin toimistus (5€)
                             </label>
                         </div>
-                        <div class="form-check mx-1">
-                            <input class="form-check-input" type="radio" name="is_city"
+                        <div className="form-check mx-1">
+                            <input className="form-check-input" type="radio" name="is_city"
                               onChange={(e) => {this.setState({delivery: 'pickup'})}}
                             />
-                            <label class="form-check-label" for="gridRadios2">
+                            <label className="form-check-label" for="gridRadios2">
                             Nouda Työpajankatu 5
                             </label>
                         </div>
                       </div>
                   </fieldset>
-                  <form class="form-horizontal mx-auto">
+                  <form className="form-horizontal mx-auto">
                   {(delivery === "home") && (
-                    <div class="form-group mb-0">
-                        <div class="col">
-                            <input type="text" class="form-control mb-2" required placeholder="Nimi"
+                    <div className="form-group mb-0">
+                        <div className="col">
+                            <input type="text" className="form-control mb-2" required placeholder="Nimi"
                               name="name" value={name} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <div class="col">
-                            <input type="number" class="form-control mb-2" required placeholder="Puhelinnumero"
+                        <div className="col">
+                            <input type="number" className="form-control mb-2" required placeholder="Puhelinnumero"
                               name="number" value={number} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <div class="col">
-                            <input type="email" class="form-control mb-2" required placeholder="Sähköposti"
+                        <div className="col">
+                            <input type="email" className="form-control mb-2" required placeholder="Sähköposti"
                               name="email" value={email} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <div class="col">
-                            <input type="text" class="form-control mb-2" required placeholder="Osoite"
+                        <div className="col">
+                            <input type="text" className="form-control mb-2" required placeholder="Osoite"
                               name="address" value={address} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <div class="col">
-                            <input type="number" class="form-control mb-2" required placeholder="Postinumero"
+                        <div className="col">
+                            <input type="number" className="form-control mb-2" required placeholder="Postinumero"
                               name="post" value={post} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <fieldset class="form-group mb-0" required>
+                        <fieldset className="form-group mb-0" required>
                             <label for="exampleInputEmail1">Kaupunki</label>
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="radio" name="is_city"
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="radio" name="is_city"
                                     onChange={(e) => {this.setState({city: 'Helsinki'})}}
                                   />
-                                  <label class="form-check-label" for="gridRadios1">
+                                  <label className="form-check-label" for="gridRadios1">
                                   Helsinki
                                   </label>
                               </div>
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="radio" name="is_city"
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="radio" name="is_city"
                                     onChange={(e) => {this.setState({city: 'Espoo'})}}
                                   />
-                                  <label class="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" for="gridRadios2">
                                   Espoo
                                   </label>
                               </div>
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="radio" name="is_city"
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="radio" name="is_city"
                                     value="vantaa" onChange={(e) => {this.setState({city: 'Vantaa'})}}
                                   />
-                                  <label class="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" for="gridRadios2">
                                   Vantaa
                                   </label>
                               </div>
                         </fieldset>
-                        <fieldset class="form-group mb-0" required>
+                        <fieldset className="form-group mb-0" required>
                             <label for="exampleInputEmail1">Lempitoimitusaika</label>
-                            <div class="row">
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
-                                  <label class="form-check-label" for="gridRadios1">
+                            <div className="row">
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
+                                  <label className="form-check-label" for="gridRadios1">
                                   9.00 - 11.00
                                   </label>
                               </div>
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="checkbox" value="a14to16" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
-                                  <label class="form-check-label" for="gridRadios2">
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="checkbox" value="a14to16" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
+                                  <label className="form-check-label" for="gridRadios2">
                                   14.00 - 16.00
                                   </label>
                               </div>
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
-                                  <label class="form-check-label" for="gridRadios2">
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
+                                  <label className="form-check-label" for="gridRadios2">
                                   18.00 - 20.00
                                   </label>
                               </div>
@@ -324,35 +328,35 @@ class NavbarHomePage extends Component {
                     </div> 
                    )}
                    {(delivery === "pickup") && (
-                    <div class="form-group mb-0">
-                        <div class="col">
-                            <input type="text" class="form-control mb-2" required placeholder="Nimi"
+                    <div className="form-group mb-0">
+                        <div className="col">
+                            <input type="text" className="form-control mb-2" required placeholder="Nimi"
                               name="name" value={name} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <div class="col">
-                            <input type="number" class="form-control mb-2" required placeholder="Puhelinnumero"
+                        <div className="col">
+                            <input type="number" className="form-control mb-2" required placeholder="Puhelinnumero"
                               name="number" value={number} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
-                        <div class="col">
-                            <input type="email" class="form-control mb-2" required placeholder="Sähköposti"
+                        <div className="col">
+                            <input type="email" className="form-control mb-2" required placeholder="Sähköposti"
                               name="email" value={email} onChange={(e) => this.handleChange(e)}
                             />
                         </div>
 
-                        <fieldset class="form-group" required>
+                        <fieldset className="form-group" required>
                             <label for="exampleInputEmail1">Lempinoutaaika</label>
-                            <div class="row">
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
-                                  <label class="form-check-label" for="gridRadios1">
+                            <div className="row">
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
+                                  <label className="form-check-label" for="gridRadios1">
                                   8.00 - 9.00
                                   </label>
                               </div>
-                              <div class="form-check mx-1">
-                                  <input class="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
-                                  <label class="form-check-label" for="gridRadios2">
+                              <div className="form-check mx-1">
+                                  <input className="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
+                                  <label className="form-check-label" for="gridRadios2">
                                   16.30 - 17.30
                                   </label>
                               </div>
