@@ -46,9 +46,7 @@ const initalState = {
     a8to9: false,
     ah16toh17: false
   },
-
   delivery: ''
-  
 }
 class NavbarHomePage extends Component {
   constructor(props) {
@@ -57,6 +55,7 @@ class NavbarHomePage extends Component {
       ...initalState,
       orderList: this.props.orderList,
       orderSent: false, 
+      orderError: ''
     }
   }
   
@@ -114,9 +113,8 @@ class NavbarHomePage extends Component {
   }
 
   submitOrder = () => {
-    const { orderList, name, city, number, address, post, deliverTime } = this.state;
-    addOrder(name, address, post, number, city, deliverTime, orderList);
-
+    const { delivery, name, address, post, number, email, city, deliverTime, orderList } = this.state;
+    addOrder(delivery, name, address, post, number, email, city, deliverTime, orderList);
     this.props.resetOrder();
 
     this.setState({
@@ -124,26 +122,33 @@ class NavbarHomePage extends Component {
       orderList: this.props.orderList,
       orderSent: true,
     });
+  }
 
+  resetForm = () => {
+    this.setState({...initalState, open:true})
   }
 
     render() {
       const {classes, makeOrder} = this.props;
-      const { orderList, name, number, address, post, orderSent,delivery, email } = this.state;
-      let deliveryFee = 0;
+      const { orderList, name, number, address, post, orderSent,delivery, email, city} = this.state;
+
+      let deliveryFee;
       (delivery === "home") ? deliveryFee = 5 : deliveryFee = 0;
       let price = 0; 
       orderList.forEach(order => {
         price += order.order * order.price
       })
-      const total = price + deliveryFee;
+      const total = (price + deliveryFee).toFixed(2);
 
-      console.log(orderList);
+      // check if user can place an order
+      let canOrder = false;  
+      if (((delivery === "home") && (name) && (number) && (email) && (address) && (post) && (city)) || 
+          ((delivery === "pickup") && (name) && (number) && (email))) canOrder = true;
       return (
           <span >
           {/* Nav bar */}
             <Navbar collapseOnSelect="true" bg="white" expand="lg" sticky="top" >
-              <Navbar.Brand className="mr-0 py-0">
+              <Navbar.Brand className="mr-0 py-0" style={{height: 55}}>
                   <Scrollchor to="#Home" animate={{offset: -150, duration: 600}} className="navbar-brand navbar ml-2">
                       <img src={logo} className="logo" alt="logo"/>
                   </Scrollchor>
@@ -151,42 +156,31 @@ class NavbarHomePage extends Component {
               
               <Nav className="mr-auto">
               </Nav>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav ">
-                  <Nav className="main-nav pr-2">
-                      <Nav.Link>
-                          <li className="nav-item ml-2 pt-1">
-                          <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
-                          </li>
-                      </Nav.Link>
+              <Navbar.Collapse id="responsive-navbar-nav " style={{height: 55}}>
+                  <Nav className="main-nav pr-2" style={{height: 55}}>
+                    <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
+                    </li>
 
-                      <Nav.Link>
-                          <li className="nav-item ml-2 pt-1 ">
-                              <Scrollchor to="#Contact" animate={{offset: -50, duration: 600}} className="nav-text">Tilaa</Scrollchor>
-                          </li>
-                      </Nav.Link>
+                    <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Scrollchor to="#Contact" animate={{offset: -50, duration: 600}} className="nav-text">Tilaa</Scrollchor>
+                    </li>
 
-                      <Nav.Link>
-                          <li className="nav-item ml-2 pt-1">
-                              <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="nav-text">Mustikat</Scrollchor>
-                          </li>
-                      </Nav.Link>
+                    <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="nav-text">Mustikat</Scrollchor>
+                    </li>
 
-                      <Nav.Link>
-                          <li className="nav-item ml-2 pt-1">
-                              <Scrollchor to="#Testimonial" animate={{offset: -70, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
-                          </li>
-                      </Nav.Link>
-                      
-                      <Nav.Link>
-                          <li className="nav-item ml-2 pt-1">
-                              <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
-                          </li>
-                      </Nav.Link>
+                    <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Scrollchor to="#Testimonial" animate={{offset: -70, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
+                    </li>
+                
+                    <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
+                    </li>
                   </Nav>
               </Navbar.Collapse>
               <Nav className="pb-1">
-                  <li className="nav-item pr-2 ml-2">
+                  <li className="nav-item pr-2 ml-2" style={{marginTop: 5}}>
                       { (!makeOrder) ? <img src='img/basket.svg' alt="no-order" className=" basket-logo" onClick={this.onCheckCart}/> 
                         : <img src='img/basket-withOrder.svg' alt="has-order" className=" basket-logo" onClick={this.onCheckCart}/>
                       }
@@ -201,7 +195,7 @@ class NavbarHomePage extends Component {
               onClose={() => {this.setState({open:false})}}
               aria-labelledby="form-dialog-title"
               maxWidth='sm'
-              withmobiledialog
+              withmobiledialog="true"
             >
             <DialogTitle 
               id="form-dialog-title pb-0"
@@ -222,26 +216,30 @@ class NavbarHomePage extends Component {
                         onHandleRemoveBox={this.onHandleRemoveBox}
                       />
                     }
-                  }
-                  )}
-
+                  })}
                 </div>
                 <h5 className="text-center">Tilauksen teidot</h5>
-                    <fieldset class="form-group mb-0" required>
+                    <fieldset className="form-group mb-0" required>
                       <div className="row">
                         <div className="form-check mx-1">
                             <input className="form-check-input" type="radio" name="is_city"
-                              onChange={(e) => {this.setState({delivery: 'home'})}}
+                              onChange={(e) => {
+                                this.resetForm();
+                                this.setState({delivery: 'home'});
+                              }}
                             />
-                            <label className="form-check-label" for="gridRadios1">
+                            <label className="form-check-label" htmlFor="gridRadios1">
                             Kotiin toimistus (5€)
                             </label>
                         </div>
                         <div className="form-check mx-1">
                             <input className="form-check-input" type="radio" name="is_city"
-                              onChange={(e) => {this.setState({delivery: 'pickup'})}}
+                              onChange={(e) => {
+                                this.resetForm();
+                                this.setState({delivery: 'pickup'});
+                              }}
                             />
-                            <label className="form-check-label" for="gridRadios2">
+                            <label className="form-check-label" htmlFor="gridRadios2">
                             Nouda Työpajankatu 5
                             </label>
                         </div>
@@ -276,12 +274,12 @@ class NavbarHomePage extends Component {
                             />
                         </div>
                         <fieldset className="form-group mb-0" required>
-                            <label for="exampleInputEmail1">Kaupunki</label>
+                            <label htmlFor="exampleInputEmail1">Kaupunki</label>
                               <div className="form-check mx-1">
                                   <input className="form-check-input" type="radio" name="is_city"
                                     onChange={(e) => {this.setState({city: 'Helsinki'})}}
                                   />
-                                  <label className="form-check-label" for="gridRadios1">
+                                  <label className="form-check-label" htmlFor="gridRadios1">
                                   Helsinki
                                   </label>
                               </div>
@@ -289,7 +287,7 @@ class NavbarHomePage extends Component {
                                   <input className="form-check-input" type="radio" name="is_city"
                                     onChange={(e) => {this.setState({city: 'Espoo'})}}
                                   />
-                                  <label className="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" htmlFor="gridRadios2">
                                   Espoo
                                   </label>
                               </div>
@@ -297,29 +295,29 @@ class NavbarHomePage extends Component {
                                   <input className="form-check-input" type="radio" name="is_city"
                                     value="vantaa" onChange={(e) => {this.setState({city: 'Vantaa'})}}
                                   />
-                                  <label className="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" htmlFor="gridRadios2">
                                   Vantaa
                                   </label>
                               </div>
                         </fieldset>
                         <fieldset className="form-group mb-0" required>
-                            <label for="exampleInputEmail1">Lempitoimitusaika</label>
+                            <label htmlFor="exampleInputEmail1">Lempitoimitusaika</label>
                             <div className="row">
                               <div className="form-check mx-1">
                                   <input className="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
-                                  <label className="form-check-label" for="gridRadios1">
+                                  <label className="form-check-label" htmlFor="gridRadios1">
                                   9.00 - 11.00
                                   </label>
                               </div>
                               <div className="form-check mx-1">
                                   <input className="form-check-input" type="checkbox" value="a14to16" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
-                                  <label className="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" htmlFor="gridRadios2">
                                   14.00 - 16.00
                                   </label>
                               </div>
                               <div className="form-check mx-1">
                                   <input className="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
-                                  <label className="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" htmlFor="gridRadios2">
                                   18.00 - 20.00
                                   </label>
                               </div>
@@ -346,17 +344,17 @@ class NavbarHomePage extends Component {
                         </div>
 
                         <fieldset className="form-group" required>
-                            <label for="exampleInputEmail1">Lempinoutaaika</label>
+                            <label htmlFor="exampleInputEmail1">Lempinoutaaika</label>
                             <div className="row">
                               <div className="form-check mx-1">
                                   <input className="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
-                                  <label className="form-check-label" for="gridRadios1">
+                                  <label className="form-check-label" htmlFor="gridRadios1">
                                   8.00 - 9.00
                                   </label>
                               </div>
                               <div className="form-check mx-1">
                                   <input className="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
-                                  <label className="form-check-label" for="gridRadios2">
+                                  <label className="form-check-label" htmlFor="gridRadios2">
                                   16.30 - 17.30
                                   </label>
                               </div>
@@ -371,12 +369,18 @@ class NavbarHomePage extends Component {
                   </form>
               </DialogContent>
               <DialogActions>
-                  <Button onClick={() => {this.setState({open:false})}} color="primary">
+                  <Button onClick={() => {this.setState({open:false, delivery: ''})}} color="primary">
                       PALAA
                   </Button>
+                  {(canOrder)? 
                   <Button onClick={this.submitOrder} variant="contained" color="primary"  >
                       TEE TILAUS
-                  </Button>
+                  </Button> : 
+                  <Button disabled variant="contained" color="primary"  >
+                      TEE TILAUS
+                  </Button> 
+                  }
+                  
               </DialogActions>
               </Dialog>
               ) : (

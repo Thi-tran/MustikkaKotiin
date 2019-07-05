@@ -13,9 +13,9 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-export const addOrder = (name, address, post, number, city, deliverTime, orderList) => {
+export const addOrder = (delivery, name, address, post, number, email, city, deliverTime, orderList) => {
     database.ref(`order`).push({
-        name, address, post, number, city, deliverTime, orderList
+        delivery, name, address, post, number, email, city, deliverTime, orderList
     })
 }
 

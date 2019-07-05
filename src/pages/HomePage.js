@@ -22,17 +22,14 @@ class HomePage extends Component {
             orderList: initalOrderList,
             makeOrder: '',
             savedOrder : '',
+            addOrderToCart: false,
         }
     }
     componentDidMount() {
         const localMakeOrder = localStorage.getItem('savedOrder');
 
-        let makeOrder = false;
-        let savedOrder = false;
-        if (localMakeOrder === "true") {
-            makeOrder = true;
-            savedOrder = true;
-        } 
+        let makeOrder = localMakeOrder;
+        let savedOrder = localMakeOrder;
 
         const orderList = this.state.orderList;
 
@@ -58,7 +55,9 @@ class HomePage extends Component {
 
     onHandleDeleteBox = (id) => {
         const productList = this.state.productList ;
-        productList[`${id}`].numBox --;
+        if (productList[`${id}`].numBox > 0) {
+            productList[`${id}`].numBox --
+        }
         this.setState({
             productList
         })
@@ -70,13 +69,17 @@ class HomePage extends Component {
         orderList[`${id}`].order =+ productList[`${id}`].numBox;
         this.setState({
             orderList,
-            makeOrder: true
+            makeOrder: true,
+            addOrderToCart: true
         })
-        setTimeout(()=> {console.log(orderList)}, 100)
+        setTimeout(()=> {
+            this.setState({addOrderToCart: false})
+        }, 1000)
 
         // Local Storage stuff 
         localStorage.setItem('savedOrder', true);
         localStorage.setItem(`order-${id}`,productList[`${id}`].numBox);
+        
     }
  
     resetOrder = () => {
@@ -89,8 +92,11 @@ class HomePage extends Component {
 
     }
     render() {
-        const {productList, orderList, makeOrder, savedOrder} = this.state;
+        const {productList, orderList, makeOrder, savedOrder, addOrderToCart} = this.state;
         const {onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart} = this;
+
+        let displaySaveOrder = false;
+        if (savedOrder) displaySaveOrder = true;
         return (
             <div className="scrolling-box">
                 <UserContext.Provider value={{productList, onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart}}>
@@ -112,10 +118,18 @@ class HomePage extends Component {
                 </UserContext.Provider>  
 
                 {savedOrder && <SnackBar 
-                    open={savedOrder}
+                    open={displaySaveOrder}
                     message="Suorita tilauksesi :)"
                     variant="info"
                     vertical="bottom"
+                    horizontal="right"
+                />}
+
+                {addOrderToCart && <SnackBar 
+                    open={addOrderToCart}
+                    message="Tilaus lisätään"
+                    variant="success"
+                    vertical="top"
                     horizontal="right"
                 />}
             </div>

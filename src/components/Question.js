@@ -44,7 +44,7 @@ class Question extends Component {
                 
                 <div className="row">
                     <div className="span-1-of-3">
-                        <img src={mePic} className="question-picture" alt="mypic"/>
+                        <img src={mePic} className="question-picture" alt="mypic" />
                     </div>
                     <div className="span-2-of-3 question-input-container">
                     <form className="form-horizontal mx-auto" onSubmit={(e) => this.onSubmit(e)} >

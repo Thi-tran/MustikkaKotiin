@@ -55,7 +55,7 @@ class ProductOrder extends Component {
                         <Typography gutterBottom variant="h5" component="h4" className={classes.title}>
                         {title}
                         </Typography>
-                        <Typography gutterBottom variant="h9" component="h6" className={classes.title}>
+                        <Typography gutterBottom variant="h6" component="h6" className={classes.title}>
                         {total} €
                         </Typography>
 
@@ -63,7 +63,6 @@ class ProductOrder extends Component {
 
                     </CardActionArea>
                         
-
                     <CardActions>
                         <div className="mx-auto">
                             <TextField value={order} style={{width: '28px', marginTop: '7px'}} className="mr-2"></TextField>
@@ -73,8 +72,8 @@ class ProductOrder extends Component {
                             <Fab size="small" aria-label="Remove" className="mx-1">
                                 {(order > 1) && <RemoveIcon onClick={() => onHandleDecBox(id)}/>}
                             </Fab>
-                            <IconButton aria-label="Delete">
-                                <DeleteIcon onClick={() => onHandleRemoveBox(id)}/>
+                            <IconButton aria-label="Delete" onClick={() => onHandleRemoveBox(id)}>
+                                <DeleteIcon />
                             </IconButton>
                         </div>
                     </CardActions>

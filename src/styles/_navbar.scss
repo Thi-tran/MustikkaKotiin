@@ -50,7 +50,7 @@ padding: 0;
     border-bottom: 2px solid transparent;
     -webkit-transform: border-bottom 0,2s;
     transform: border-bottom 0,2s;
-    padding: 0 0 5px 0;
+    padding: 0 0 1px 0;
 }
 
 .main-nav li a:hover,
@@ -78,4 +78,15 @@ DialogTitle .h2 {
 
 .card-product {
     margin: 0 auto;
+}
+
+.nav-item {
+    display: 'flex' !important;
+    align-items: 'center' !important;
+    justify-content: 'center' !important;
+}
+
+.nav-text{
+    margin-top: 5px;
+    padding-bottom: 0;
 }
