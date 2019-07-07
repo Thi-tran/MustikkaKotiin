@@ -44,7 +44,7 @@ const initalState = {
   },  
   pickupTime: {
     a8to9: false,
-    ah16toh17: false
+    a16to17: false
   },
   delivery: ''
 }
@@ -113,8 +113,8 @@ class NavbarHomePage extends Component {
   }
 
   submitOrder = () => {
-    const { delivery, name, address, post, number, email, city, deliverTime, orderList } = this.state;
-    addOrder(delivery, name, address, post, number, email, city, deliverTime, orderList);
+    const { delivery, name, address, post, number, email, city, deliverTime, pickupTime, orderList } = this.state;
+    addOrder(delivery, name, address, post, number, email, city, deliverTime, pickupTime, orderList);
     this.props.resetOrder();
 
     this.setState({
@@ -147,7 +147,7 @@ class NavbarHomePage extends Component {
       return (
           <span >
           {/* Nav bar */}
-            <Navbar collapseOnSelect="true" bg="white" expand="lg" sticky="top" >
+            <Navbar collapseOnSelect="true" bg="white" expand="lg" sticky="top" className="navbar">
               <Navbar.Brand className="mr-0 py-0" style={{height: 55}}>
                   <Scrollchor to="#Home" animate={{offset: -150, duration: 600}} className="navbar-brand navbar ml-2">
                       <img src={logo} className="logo" alt="logo"/>
@@ -156,8 +156,9 @@ class NavbarHomePage extends Component {
               
               <Nav className="mr-auto">
               </Nav>
-              <Navbar.Collapse id="responsive-navbar-nav " style={{height: 55}}>
-                  <Nav className="main-nav pr-2" style={{height: 55}}>
+
+              <Navbar.Collapse id="responsive-navbar-nav ">
+                  <Nav className="main-nav pr-2">
                     <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
                     </li>
@@ -173,14 +174,14 @@ class NavbarHomePage extends Component {
                     <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Scrollchor to="#Testimonial" animate={{offset: -70, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
                     </li>
-                
+
                     <li className="nav-item ml-2 pt-1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
                     </li>
                   </Nav>
               </Navbar.Collapse>
-              <Nav className="pb-1">
-                  <li className="nav-item pr-2 ml-2" style={{marginTop: 5}}>
+              <Nav>
+                  <li className="nav-item pr-2 ml-2" >
                       { (!makeOrder) ? <img src='img/basket.svg' alt="no-order" className=" basket-logo" onClick={this.onCheckCart}/> 
                         : <img src='img/basket-withOrder.svg' alt="has-order" className=" basket-logo" onClick={this.onCheckCart}/>
                       }
@@ -207,16 +208,17 @@ class NavbarHomePage extends Component {
             >
                 <div className="row">
                   {orderList.map((order) => {
-                    if (order.order > 0) {
-                      return <ProductOrder 
-                        key={order.id}
-                        {...order}
-                        onHandleIncBox={this.onHandleIncBox}
-                        onHandleDecBox={this.onHandleDecBox}
-                        onHandleRemoveBox={this.onHandleRemoveBox}
-                      />
+                      if (order.order > 0) {
+                        return <ProductOrder 
+                          key={order.id}
+                          {...order}
+                          onHandleIncBox={this.onHandleIncBox}
+                          onHandleDecBox={this.onHandleDecBox}
+                          onHandleRemoveBox={this.onHandleRemoveBox}
+                        />
+                      }
                     }
-                  })}
+                  )}
                 </div>
                 <h5 className="text-center">Tilauksen teidot</h5>
                     <fieldset className="form-group mb-0" required>

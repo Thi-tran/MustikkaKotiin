@@ -6,7 +6,6 @@
     padding-left: 20px;
 }
 
-
 .sticktop {
     position: sticky;
     top: 0;
@@ -80,13 +79,6 @@ DialogTitle .h2 {
     margin: 0 auto;
 }
 
-.nav-item {
-    display: 'flex' !important;
-    align-items: 'center' !important;
-    justify-content: 'center' !important;
-}
-
-.nav-text{
-    margin-top: 5px;
-    padding-bottom: 0;
+.navbar{
+    position: fixed;
 }
