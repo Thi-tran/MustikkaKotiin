@@ -26,7 +26,7 @@ class HomePage extends Component {
         }
     }
     componentDidMount() {
-        const localMakeOrder = localStorage.getItem('savedOrder');
+        const localMakeOrder = (localStorage.getItem('savedOrder') === "true");
 
         let makeOrder = localMakeOrder;
         let savedOrder = localMakeOrder;
@@ -96,7 +96,7 @@ class HomePage extends Component {
         const {onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart} = this;
 
         let displaySaveOrder = false;
-        if (savedOrder) displaySaveOrder = true;
+        if (savedOrder==="true") displaySaveOrder = true;
         return (
             <div className="scrolling-box">
                 <UserContext.Provider value={{productList, onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart}}>

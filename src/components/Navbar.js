@@ -23,10 +23,12 @@ const styles = theme => ({
   dialogTitle: {
     padding: 0,
   }, 
-    container: {
+  container: {
     marginLeft: '10px'
+  },
+  content: {
+    textAlign: 'center'
   }
-
 });
 
 const initalState = {
@@ -38,13 +40,13 @@ const initalState = {
   post: '',
   email: '',
   deliverTime: {
-    a9to11: false,
-    a14to16: false,
-    a18to20: false
+    '9-11': false,
+    '14-16': false,
+    '18-20': false
   },  
   pickupTime: {
-    a8to9: false,
-    a16to17: false
+    '8-9': false,
+    '16.30-17.30': false
   },
   delivery: ''
 }
@@ -55,7 +57,8 @@ class NavbarHomePage extends Component {
       ...initalState,
       orderList: this.props.orderList,
       orderSent: false, 
-      orderError: ''
+      orderError: '',
+      thankYouDialog: false
     }
   }
   
@@ -77,6 +80,7 @@ class NavbarHomePage extends Component {
     deliverTime[`${change}`] = !deliverTime[`${change}`];
     this.setState({ deliverTime });
   }
+
   onHandlePickupTime = (change) => {
     let pickupTime = this.state.pickupTime;
     pickupTime[`${change}`] = !pickupTime[`${change}`];
@@ -102,25 +106,31 @@ class NavbarHomePage extends Component {
     const orderList = this.state.orderList;
     orderList[`${id}`].order = 0;
     this.setState({orderList});
+
     localStorage.removeItem(`order-${id}`);
 
-    let noOrderLeft = false;
+    let isOrderLeft = false;
     this.state.orderList.forEach(order => {
-      if (order.order > 0) noOrderLeft = true;
+      if (order.order > 0) isOrderLeft = true;
     })
 
-    if (!noOrderLeft) this.props.resetOrder();
+    if (!isOrderLeft) this.props.resetOrder();
   }
 
   submitOrder = () => {
     const { delivery, name, address, post, number, email, city, deliverTime, pickupTime, orderList } = this.state;
     addOrder(delivery, name, address, post, number, email, city, deliverTime, pickupTime, orderList);
+
     this.props.resetOrder();
 
+    localStorage.removeItem(`order-0`);
+    localStorage.removeItem(`order-1`);
+
+
     this.setState({
-      ...initalState,   
-      orderList: this.props.orderList,
       orderSent: true,
+      open: false,
+      thankYouDialog: true
     });
   }
 
@@ -143,13 +153,16 @@ class NavbarHomePage extends Component {
       // check if user can place an order
       let canOrder = false;  
       if (((delivery === "home") && (name) && (number) && (email) && (address) && (post) && (city)) || 
-          ((delivery === "pickup") && (name) && (number) && (email))) canOrder = true;
+          ((delivery === "pickup") && (name) && (number) && (email))) 
+          canOrder = true;
+
+
       return (
           <span >
           {/* Nav bar */}
             <Navbar collapseOnSelect="true" bg="white" expand="lg" sticky="top" className="navbar">
               <Navbar.Brand className="mr-0 py-0" style={{height: 55}}>
-                  <Scrollchor to="#Home" animate={{offset: -150, duration: 600}} className="navbar-brand navbar ml-2">
+                  <Scrollchor to="#Home" animate={{offset: -150, duration: 600}} className="navbar-brand ml-2">
                       <img src={logo} className="logo" alt="logo"/>
                   </Scrollchor>
               </Navbar.Brand>
@@ -306,19 +319,19 @@ class NavbarHomePage extends Component {
                             <label htmlFor="exampleInputEmail1">Lempitoimitusaika</label>
                             <div className="row">
                               <div className="form-check mx-1">
-                                  <input className="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
+                                  <input className="form-check-input" type="checkbox" value="9-11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
                                   <label className="form-check-label" htmlFor="gridRadios1">
                                   9.00 - 11.00
                                   </label>
                               </div>
                               <div className="form-check mx-1">
-                                  <input className="form-check-input" type="checkbox" value="a14to16" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
+                                  <input className="form-check-input" type="checkbox" value="14-16" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
                                   <label className="form-check-label" htmlFor="gridRadios2">
                                   14.00 - 16.00
                                   </label>
                               </div>
                               <div className="form-check mx-1">
-                                  <input className="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
+                                  <input className="form-check-input" type="checkbox" value="18-20" onChange={(e) => this.onHandleDeliveryTime(e.target.value)}/>
                                   <label className="form-check-label" htmlFor="gridRadios2">
                                   18.00 - 20.00
                                   </label>
@@ -349,13 +362,13 @@ class NavbarHomePage extends Component {
                             <label htmlFor="exampleInputEmail1">Lempinoutaaika</label>
                             <div className="row">
                               <div className="form-check mx-1">
-                                  <input className="form-check-input" type="checkbox" value="a9to11" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
+                                  <input className="form-check-input" type="checkbox" value="8-9" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
                                   <label className="form-check-label" htmlFor="gridRadios1">
                                   8.00 - 9.00
                                   </label>
                               </div>
                               <div className="form-check mx-1">
-                                  <input className="form-check-input" type="checkbox" value="a18to20" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
+                                  <input className="form-check-input" type="checkbox" value="16.30-17.30" onChange={(e) => this.onHandlePickupTime(e.target.value)}/>
                                   <label className="form-check-label" htmlFor="gridRadios2">
                                   16.30 - 17.30
                                   </label>
@@ -391,7 +404,7 @@ class NavbarHomePage extends Component {
                 onClose={() => {this.setState({open:false})}}
                 aria-labelledby="form-dialog-title"
               >
-              <DialogTitle id="form-dialog-title">Tyhjä ostoskori</DialogTitle>
+                <DialogTitle id="form-dialog-title">Tyhjä ostoskori</DialogTitle>
               </Dialog>
               )}
 
@@ -402,6 +415,38 @@ class NavbarHomePage extends Component {
                 vertical="bottom"
                 horizontal="left"
               />}
+
+              <Dialog
+                open={this.state.thankYouDialog}
+                onClose={() => {this.setState({thankYouDialog:false})}}
+                aria-labelledby="form-dialog-title"
+              >
+              <DialogTitle id="form-dialog-title"
+                className={classes.dialogTitle}
+              >
+                Kiitos tilauksestasi!
+              </DialogTitle>
+              <DialogContent
+                className="classes.content"
+              > 
+                <div className="row" style={{justifyContent: 'center', paddingBottom:20}}>
+                  <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/smiling-face-with-smiling-eyes_1f60a.png" 
+                    alt="Smiley Face"
+                    style={{height: 40}}
+                  />
+                  <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/heavy-black-heart_2764.png" 
+                    alt="Heart"
+                    style={{height: 40}}
+                  />
+                  <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/glowing-star_1f31f.png" 
+                    alt="Star"
+                    style={{height: 40}}
+                  />
+                </div>
+                <h5 className="text-center">Otamme sinuun yhteyttä pian puhelimitse järjestääksesi toimitusajan</h5>
+                <div className="text-center">Mikäli sinulla on kysyttävää, otathan yhteyttä asiakaspalveluumme</div>
+              </DialogContent>
+              </Dialog>
           </span>
         );
     }
