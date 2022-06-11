@@ -15,35 +15,36 @@ import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Fab from '@material-ui/core/Fab';
+import { roundedTwoDecimals } from './utils';
 
 
 
 const styles = theme => ({
     card: {
         maxWidth: 250,
-      },
+    },
     media: {
         minHeight: 150,
         marginHorizontal: 10,
-    },    
+    },
     icon: {
         margin: theme.spacing.unit,
         fontSize: 32,
-    }, 
+    },
     title: {
         textAlign: 'center'
     }
-    
+
 });
-  
+
 class ProductOrder extends Component {
-    
+
     render() {
         const { classes, id, title, mainPic, order, onHandleDecBox, onHandleIncBox, onHandleRemoveBox, price } = this.props;
-        const total = price * order; 
+        const total = price * order;
         return (
 
-            <div className="span-1-of-2 mb-3 card-product">
+            <div className="mb-3 card-product">
                 <Card className={classes.card}>
                     <CardActionArea>
                         <CardMedia
@@ -52,25 +53,25 @@ class ProductOrder extends Component {
                             title="Contemplative Reptile"
                         />
                         <CardContent>
-                        <Typography gutterBottom variant="h5" component="h4" className={classes.title}>
-                        {title}
-                        </Typography>
-                        <Typography gutterBottom variant="h6" component="h6" className={classes.title}>
-                        {total} €
-                        </Typography>
+                            <Typography gutterBottom variant="h5" component="h4" className={classes.title}>
+                                {title}
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="h6" className={classes.title}>
+                                {roundedTwoDecimals(total)} €
+                            </Typography>
 
                         </CardContent>
 
                     </CardActionArea>
-                        
+
                     <CardActions>
                         <div className="mx-auto">
-                            <TextField value={order} style={{width: '28px', marginTop: '7px'}} className="mr-2"></TextField>
+                            <TextField value={order} style={{ width: '28px', marginTop: '7px' }} className="mr-2"></TextField>
                             <Fab size="small" color="secondary" aria-label="Add" className="mx-1">
-                                <AddIcon onClick={() => onHandleIncBox(id)}/>
+                                <AddIcon onClick={() => onHandleIncBox(id)} />
                             </Fab>
                             <Fab size="small" aria-label="Remove" className="mx-1">
-                                {(order > 1) && <RemoveIcon onClick={() => onHandleDecBox(id)}/>}
+                                {(order > 1) && <RemoveIcon onClick={() => onHandleDecBox(id)} />}
                             </Fab>
                             <IconButton aria-label="Delete" onClick={() => onHandleRemoveBox(id)}>
                                 <DeleteIcon />
@@ -86,7 +87,7 @@ class ProductOrder extends Component {
 ProductOrder.propTypes = {
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
-  };
-  
-  export default withStyles(styles, { withTheme: true })(ProductOrder);
-  
+};
+
+export default withStyles(styles, { withTheme: true })(ProductOrder);
+

@@ -3,7 +3,7 @@ import Product from './Product';
 
 class Products extends Component {
     render() {
-        const {productList} = this.props;
+        const { productList } = this.props;
 
         return (
             <section className="section-product" id="Product">
@@ -13,7 +13,7 @@ class Products extends Component {
 
                 <div className="row card-container">
                     {productList.map((product) => (
-                        <Product 
+                        <Product
                             key={product.id}
                             {...product}
                         />
@@ -23,5 +23,5 @@ class Products extends Component {
         );
     }
 }
-  
+
 export default Products;

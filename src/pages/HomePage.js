@@ -66,7 +66,7 @@ class HomePage extends Component {
     onHandleAddBoxToCart = (id) => {
         const orderList = this.state.orderList;
         const productList = this.state.productList;
-        orderList[`${id}`].order = + productList[`${id}`].numBox;
+        orderList[`${id}`].order = Number(orderList[`${id}`].order) + Number(productList[`${id}`].numBox);
         this.setState({
             orderList,
             makeOrder: true,
@@ -76,7 +76,7 @@ class HomePage extends Component {
             this.setState({ addOrderToCart: false })
         }, 1000)
 
-        // Local Storage stuff 
+        // Local Storage stuff
         localStorage.setItem('savedOrder', true);
         localStorage.setItem(`order-${id}`, productList[`${id}`].numBox);
 

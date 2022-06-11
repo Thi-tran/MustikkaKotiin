@@ -1,0 +1,1 @@
+export const roundedTwoDecimals = (number) => Math.round(number * 100) / 100;
