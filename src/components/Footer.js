@@ -7,24 +7,24 @@ class Footer extends Component {
             <footer>
                 <div className="row">
                     <ul className="footer-nav mx-auto">
-                    <li className="nav-item">
-                        <Scrollchor to="#About" animate={{offset: -50, duration: 600}} className="nav-text">Tarina</Scrollchor>
-                    </li>
-                    <li className="nav-item">
-                        <Scrollchor to="#Contact" animate={{offset: -50, duration: 600}} className="nav-text">Tilaa</Scrollchor>
-                    </li>
-                    <li className="nav-item">
-                        <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="nav-text">Mustikat</Scrollchor>
-                    </li>
-                    <li className="nav-item">
-                        <Scrollchor to="#Testimonial" animate={{offset: -50, duration: 600}} className="nav-text">Muistoottelu</Scrollchor>
-                    </li>
-                    <li className="nav-item">
-                        <Scrollchor to="#Question" animate={{offset: -50, duration: 600}} className="nav-text">Kysymys</Scrollchor>
-                    </li>
-                        </ul>
+                        <li className="nav-item">
+                            <Scrollchor to="#About" animate={{ offset: -50, duration: 600 }} className="nav-text">Tarina</Scrollchor>
+                        </li>
+                        <li className="nav-item">
+                            <Scrollchor to="#Contact" animate={{ offset: -50, duration: 600 }} className="nav-text">Tilaa</Scrollchor>
+                        </li>
+                        <li className="nav-item">
+                            <Scrollchor to="#Product" animate={{ offset: -50, duration: 600 }} className="nav-text">Mustikat</Scrollchor>
+                        </li>
+                        <li className="nav-item">
+                            <Scrollchor to="#Testimonial" animate={{ offset: -50, duration: 600 }} className="nav-text">Muistoottelu</Scrollchor>
+                        </li>
+                        <li className="nav-item">
+                            <Scrollchor to="#Question" animate={{ offset: -50, duration: 600 }} className="nav-text">Kysymys</Scrollchor>
+                        </li>
+                    </ul>
                 </div>
-                
+
                 <div className="row">
                     <ul className="footer-icon-list mx-auto">
                         <li><a href="https://www.facebook.com/mustikkakotiin"><ion-icon name="logo-facebook" className="icon-facebook"></ion-icon></a></li>
@@ -34,7 +34,7 @@ class Footer extends Component {
                     <div className="footer-text">©2018 by MustikkaKotiin (Y-tunnus: 2840945-7)</div>
                     <div className="footer-text">All data is protected under GDPR </div>
                 </div>
-            </footer>        
+            </footer>
         );
     }
 }
