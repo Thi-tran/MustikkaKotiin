@@ -19,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build && cp build/index.html build/200.html",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy:s3": "aws s3 rm s3://www.mustikkakotiin.fi --recursive && aws s3 cp ./build s3://www.mustikkakotiin.fi --recursive"
   },
   "eslintConfig": {
     "extends": "react-app"
