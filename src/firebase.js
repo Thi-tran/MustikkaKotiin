@@ -1,13 +1,13 @@
 import * as firebase from 'firebase';
-  
+
 // Initialize Firebase
 const config = {
-apiKey: "AIzaSyD4KaAxgIbOmqSBInYAXTGNuvSwtU7Fh5Y",
-authDomain: "mustikkakotiin-8272c.firebaseapp.com",
-databaseURL: "https://mustikkakotiin-8272c.firebaseio.com",
-projectId: "mustikkakotiin-8272c",
-storageBucket: "mustikkakotiin-8272c.appspot.com",
-messagingSenderId: "169771178793"
+    apiKey: "AIzaSyB1e5MwZmL8bn97D2EKcxSDPuSLJ-FhHYA",
+    authDomain: "mustikkakotiin-4eee0.firebaseapp.com",
+    databaseURL: "https://mustikkakotiin-4eee0-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "mustikkakotiin-4eee0",
+    storageBucket: "mustikkakotiin-4eee0.appspot.com",
+    messagingSenderId: "767754927150"
 };
 firebase.initializeApp(config);
 
@@ -17,15 +17,12 @@ export const addOrder = (delivery, name, address, post, number, email, city, del
 
     let deliveryTime = '';
     let pickupTime = '';
-    console.log(deliverTimeObject);
-    console.log(pickupTimeObject);
-    if (delivery === "home"){
+    if (delivery === "home") {
         for (let [key, value] of Object.entries(deliverTimeObject)) {
             if (value) {
                 deliveryTime += key + ' ';
             }
         }
-        console.log(deliveryTime)
     }
     if (delivery === "pickup") {
         for (let [key, value] of Object.entries(pickupTimeObject)) {
@@ -33,7 +30,6 @@ export const addOrder = (delivery, name, address, post, number, email, city, del
                 pickupTime += key + ' ';
             }
         }
-        console.log(pickupTime)
     }
 
     database.ref(`order`).push({

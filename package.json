@@ -6,8 +6,9 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "bootstrap": "^4.3.1",
-    "firebase": "^5.9.2",
+    "firebase": "7.14.5",
     "material-ui": "^1.0.0-beta.47",
+    "node-pre-gyp": "^0.17.0",
     "react": "^16.8.5",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.5",
@@ -20,7 +21,7 @@
     "build": "react-scripts build && cp build/index.html build/200.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:s3": "aws s3 rm s3://www.mustikkakotiin.fi --recursive && aws s3 cp ./build s3://www.mustikkakotiin.fi --recursive"
+    "deploy:s3": "npm run build && aws s3 rm s3://www.mustikkakotiin.fi --recursive && aws s3 cp ./build s3://www.mustikkakotiin.fi --recursive"
   },
   "eslintConfig": {
     "extends": "react-app"
