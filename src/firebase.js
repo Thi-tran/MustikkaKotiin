@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 
 // Initialize Firebase
 const config = {
-    apiKey: "AIzaSyB1e5MwZmL8bn97D2EKcxSDPuSLJ-FhHYA",
+    apiKey: process.env.REACT_APP_FIREBASE_API,
     authDomain: "mustikkakotiin-4eee0.firebaseapp.com",
     databaseURL: "https://mustikkakotiin-4eee0-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "mustikkakotiin-4eee0",
