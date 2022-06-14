@@ -14,7 +14,6 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 export const addOrder = (delivery, name, address, post, number, email, city, deliverTimeObject, pickupTimeObject, orderList) => {
-
     let deliveryTime = '';
     let pickupTime = '';
     if (delivery === "home") {
@@ -31,9 +30,10 @@ export const addOrder = (delivery, name, address, post, number, email, city, del
             }
         }
     }
+    const orderTime = new Date().toDateString();
 
     database.ref(`order`).push({
-        delivery, name, address, post, number, email, city, deliveryTime, pickupTime, orderList
+        delivery, name, address, post, number, email, city, deliveryTime, pickupTime, orderList, orderTime
     })
 }
 
