@@ -320,15 +320,9 @@ class NavbarHomePage extends Component {
                       <label htmlFor="exampleInputEmail1">Lempitoimitusaika</label>
                       <div className="row">
                         <div className="form-check mx-1">
-                          <input className="form-check-input" type="checkbox" value="9-11" onChange={(e) => this.onHandleDeliveryTime(e.target.value)} />
-                          <label className="form-check-label" htmlFor="gridRadios1">
-                            9.00 - 11.00
-                          </label>
-                        </div>
-                        <div className="form-check mx-1">
-                          <input className="form-check-input" type="checkbox" value="14-16" onChange={(e) => this.onHandleDeliveryTime(e.target.value)} />
+                          <input className="form-check-input" type="checkbox" value="15-17" onChange={(e) => this.onHandleDeliveryTime(e.target.value)} />
                           <label className="form-check-label" htmlFor="gridRadios2">
-                            14.00 - 16.00
+                            15.00 - 17.00
                           </label>
                         </div>
                         <div className="form-check mx-1">
