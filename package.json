@@ -21,7 +21,8 @@
     "build": "react-scripts build && cp build/index.html build/200.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:s3": "npm run build && aws s3 rm s3://www.mustikkakotiin.fi --recursive && aws s3 cp ./build s3://www.mustikkakotiin.fi --recursive"
+    "deploy:s3": "npm run build && aws s3 rm s3://www.mustikkakotiin.fi --recursive && aws s3 cp ./build s3://www.mustikkakotiin.fi --recursive && npm run deploy-after",
+    "deploy-after": "aws cloudfront create-invalidation --distribution-id E2WCDR5GWOWAKV --paths '/*'"
   },
   "eslintConfig": {
     "extends": "react-app"
