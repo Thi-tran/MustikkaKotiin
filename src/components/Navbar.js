@@ -186,7 +186,7 @@ class NavbarHomePage extends Component {
               </li>
 
               <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Scrollchor to="#Testimonial" animate={{ offset: -70, duration: 600 }} className="nav-text">Muistoottelu</Scrollchor>
+                <Scrollchor to="#Testimonial" animate={{ offset: -70, duration: 600 }} className="nav-text">Kokemuksia</Scrollchor>
               </li>
 
               <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
