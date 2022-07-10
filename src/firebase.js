@@ -3,11 +3,11 @@ import * as firebase from 'firebase';
 // Initialize Firebase
 const config = {
     apiKey: process.env.REACT_APP_FIREBASE_API,
-    authDomain: "mustikkakotiin-4eee0.firebaseapp.com",
-    databaseURL: "https://mustikkakotiin-4eee0-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "mustikkakotiin-4eee0",
-    storageBucket: "mustikkakotiin-4eee0.appspot.com",
-    messagingSenderId: "767754927150"
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_SENDER_ID
 };
 firebase.initializeApp(config);
 
