@@ -17,6 +17,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import SnackBar from './SnackBar';
 import { roundedTwoDecimals } from './utils';
+import { PICKUP_ADDRESS } from '../email/utils';
 
 
 
@@ -256,7 +257,7 @@ class NavbarHomePage extends Component {
                       }}
                     />
                     <label className="form-check-label" htmlFor="gridRadios2">
-                      Nouda Työpajankatu 5
+                      Nouda {PICKUP_ADDRESS}
                     </label>
                   </div>
                 </div>
@@ -359,13 +360,7 @@ class NavbarHomePage extends Component {
                         <div className="form-check mx-1">
                           <input className="form-check-input" type="checkbox" value="8-9" onChange={(e) => this.onHandlePickupTime(e.target.value)} />
                           <label className="form-check-label" htmlFor="gridRadios1">
-                            8.00 - 9.00
-                          </label>
-                        </div>
-                        <div className="form-check mx-1">
-                          <input className="form-check-input" type="checkbox" value="16.30-17.30" onChange={(e) => this.onHandlePickupTime(e.target.value)} />
-                          <label className="form-check-label" htmlFor="gridRadios2">
-                            16.30 - 17.30
+                            14.00 - 15.00
                           </label>
                         </div>
                       </div>
