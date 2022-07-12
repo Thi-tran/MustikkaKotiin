@@ -541,7 +541,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress)
                               font-weight: normal;
                               line-height: 13px;
                             "
-                            >Lähetämme tekstiviestin numeroon +358457872534, kun
+                            >Soitamme numeroon +358457872534, kun
                             pakettisi on saatavilla.</span
                           >
                         </div>
