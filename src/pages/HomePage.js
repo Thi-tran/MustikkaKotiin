@@ -85,12 +85,13 @@ class HomePage extends Component {
     resetOrder = () => {
         this.setState({
             orderList: initalOrderList,
+            productList: initalProductList,
             makeOrder: false
         });
 
         localStorage.setItem('savedOrder', false);
-
     }
+
     render() {
         const { productList, orderList, makeOrder, savedOrder, addOrderToCart } = this.state;
         const { onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart } = this;
@@ -106,7 +107,7 @@ class HomePage extends Component {
                         resetOrder={this.resetOrder}
                     />
                     <Header />
-                    <About />
+                    {/* <About /> */}
                     <Steps />
                     <Pics />
                     <Products

@@ -7,7 +7,7 @@ export const initalProductList = [
         pics: [],
         numBox: 1,
         price: 44.99
-    }, 
+    },
     {
         id: 1,
         title: '3KG LAATIKKO',
@@ -28,7 +28,7 @@ export const initalOrderList = [
         price: 44.99
     },
     {
-        id: 1, 
+        id: 1,
         title: '3kg laatikko',
         mainPic: 'img/3kg-box-nobg.jpg',
         order: 0,

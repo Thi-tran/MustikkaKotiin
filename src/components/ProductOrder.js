@@ -38,7 +38,6 @@ const styles = theme => ({
 });
 
 class ProductOrder extends Component {
-
     render() {
         const { classes, id, title, mainPic, order, onHandleDecBox, onHandleIncBox, onHandleRemoveBox, price } = this.props;
         const total = price * order;
