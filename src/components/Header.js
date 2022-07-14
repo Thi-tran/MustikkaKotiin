@@ -6,9 +6,9 @@ class Header extends Component {
         return (
             <div className="" id="Home">
                 <header className="header">
-                    <div className="hero-text-box"> 
+                    <div className="hero-text-box">
                         <h1>Nauti Kesäisestä mausta kotonasi</h1>
-                        <Scrollchor to="#Product" animate={{offset: -50, duration: 600}} className="btn btn-full">Mustikat</Scrollchor>
+                        <Scrollchor to="#Product" animate={{ offset: -50, duration: 600 }} className="btn btn-full">Mustikat</Scrollchor>
                     </div>
                 </header>
             </div>

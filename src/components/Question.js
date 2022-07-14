@@ -39,7 +39,7 @@ class Question extends Component {
         return (
             <section className="section-question pb-5" id="Question">
                 <div className="row">
-                    <h2 className="mx-auto">Kysymys</h2>
+                    <h2 className="mx-auto">Yhteydenotto</h2>
                 </div>
 
                 <div className="row">

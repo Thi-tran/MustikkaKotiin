@@ -7,7 +7,7 @@ class Steps extends Component {
         return (
             <section className="section-steps" id="Contact">
                 <div className="row">
-                    <h2 className="mx-auto">Kuinka se toimii</h2>
+                    <h2 className="mx-auto">Miten se toimii</h2>
                 </div>
 
                 <div className="row steps-container">

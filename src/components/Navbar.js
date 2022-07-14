@@ -17,8 +17,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import SnackBar from './SnackBar';
 import { roundedTwoDecimals } from './utils';
-
-
+import { PICKUP_ADDRESS } from '../email/utils';
+import { initalOrderList } from '../materials/itemList';
 
 const styles = theme => ({
   dialogTitle: {
@@ -63,9 +63,15 @@ class NavbarHomePage extends Component {
     }
   }
 
-  imageClick = () => {
-    console.log('click')
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.orderList !== this.props.orderList) {
+      this.setState({
+        orderList: this.props.orderList
+      })
+    }
   }
+
   onCheckCart = () => {
     this.setState({ open: true });
   }
@@ -89,14 +95,14 @@ class NavbarHomePage extends Component {
   }
 
   onHandleIncBox = (id) => {
-    const orderList = this.state.orderList;
+    const orderList = [...this.state.orderList];
     orderList[`${id}`].order++;
     this.setState({ orderList });
     localStorage.setItem(`order-${id}`, orderList[`${id}`].order);
   }
 
   onHandleDecBox = (id) => {
-    const orderList = this.state.orderList;
+    const orderList = [...this.state.orderList];
     orderList[`${id}`].order--;
     this.setState({ orderList });
     localStorage.setItem(`order-${id}`, orderList[`${id}`].order);
@@ -104,7 +110,7 @@ class NavbarHomePage extends Component {
 
 
   onHandleRemoveBox = (id) => {
-    const orderList = this.state.orderList;
+    const orderList = [...this.state.orderList];
     orderList[`${id}`].order = 0;
     this.setState({ orderList });
 
@@ -127,7 +133,6 @@ class NavbarHomePage extends Component {
     localStorage.removeItem(`order-0`);
     localStorage.removeItem(`order-1`);
 
-
     this.setState({
       orderSent: true,
       open: false,
@@ -138,7 +143,6 @@ class NavbarHomePage extends Component {
   resetForm = () => {
     this.setState({ ...initalState, open: true })
   }
-
   render() {
     const { classes, makeOrder } = this.props;
     const { orderList, name, number, address, post, orderSent, delivery, email, city } = this.state;
@@ -157,7 +161,6 @@ class NavbarHomePage extends Component {
       ((delivery === "pickup") && (name) && (number) && (email)))
       canOrder = true;
 
-
     return (
       <span >
         {/* Nav bar */}
@@ -173,12 +176,12 @@ class NavbarHomePage extends Component {
 
           <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="main-nav pr-2">
-              <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              {/* <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Scrollchor to="#About" animate={{ offset: -50, duration: 600 }} className="nav-text">Tarina</Scrollchor>
-              </li>
+              </li> */}
 
               <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Scrollchor to="#Contact" animate={{ offset: -50, duration: 600 }} className="nav-text">Tilaa</Scrollchor>
+                <Scrollchor to="#Contact" animate={{ offset: -50, duration: 600 }} className="nav-text">Ohje</Scrollchor>
               </li>
 
               <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -190,7 +193,7 @@ class NavbarHomePage extends Component {
               </li>
 
               <li className="nav-item ml-2 pt-1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Scrollchor to="#Question" animate={{ offset: -50, duration: 600 }} className="nav-text">Kysymys</Scrollchor>
+                <Scrollchor to="#Question" animate={{ offset: -50, duration: 600 }} className="nav-text">Yhteydenotto</Scrollchor>
               </li>
             </Nav>
           </Navbar.Collapse>
@@ -222,15 +225,17 @@ class NavbarHomePage extends Component {
             >
               <div className="row">
                 {orderList.map((order) => {
-                  if (order.order > 0) {
-                    return <ProductOrder
-                      key={order.id}
-                      {...order}
-                      onHandleIncBox={this.onHandleIncBox}
-                      onHandleDecBox={this.onHandleDecBox}
-                      onHandleRemoveBox={this.onHandleRemoveBox}
-                    />
+                  if (!order.order || order.order === 0) {
+                    return null
                   }
+
+                  return <ProductOrder
+                    key={order.id}
+                    {...order}
+                    onHandleIncBox={this.onHandleIncBox}
+                    onHandleDecBox={this.onHandleDecBox}
+                    onHandleRemoveBox={this.onHandleRemoveBox}
+                  />
                 }
                 )}
               </div>
@@ -240,7 +245,6 @@ class NavbarHomePage extends Component {
                   <div className="form-check mx-1">
                     <input className="form-check-input" type="radio" name="is_city"
                       onChange={(e) => {
-                        this.resetForm();
                         this.setState({ delivery: 'home' });
                       }}
                     />
@@ -251,12 +255,11 @@ class NavbarHomePage extends Component {
                   <div className="form-check mx-1">
                     <input className="form-check-input" type="radio" name="is_city"
                       onChange={(e) => {
-                        this.resetForm();
                         this.setState({ delivery: 'pickup' });
                       }}
                     />
                     <label className="form-check-label" htmlFor="gridRadios2">
-                      Nouda Työpajankatu 5
+                      Nouda {PICKUP_ADDRESS}
                     </label>
                   </div>
                 </div>
@@ -359,13 +362,7 @@ class NavbarHomePage extends Component {
                         <div className="form-check mx-1">
                           <input className="form-check-input" type="checkbox" value="8-9" onChange={(e) => this.onHandlePickupTime(e.target.value)} />
                           <label className="form-check-label" htmlFor="gridRadios1">
-                            8.00 - 9.00
-                          </label>
-                        </div>
-                        <div className="form-check mx-1">
-                          <input className="form-check-input" type="checkbox" value="16.30-17.30" onChange={(e) => this.onHandlePickupTime(e.target.value)} />
-                          <label className="form-check-label" htmlFor="gridRadios2">
-                            16.30 - 17.30
+                            14.00 - 15.00
                           </label>
                         </div>
                       </div>

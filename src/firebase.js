@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { EmailTemplate } from './email/template';
 
 // Initialize Firebase
 const config = {
@@ -31,9 +32,20 @@ export const addOrder = (delivery, name, address, post, number, email, city, del
         }
     }
     const orderTime = new Date().toDateString();
+    const orderNumber = Math.floor(Math.random() * 1000000000);
 
     database.ref(`order`).push({
-        delivery, name, address, post, number, email, city, deliveryTime, pickupTime, orderList, orderTime
+        delivery, name, address, post, number, email, city, deliveryTime, pickupTime, orderList, orderTime, orderNumber
+    })
+
+    const deliveryAddress = `${address} ${post} ${city}`;
+
+    firebase.firestore().collection('mail').add({
+        to: email,
+        message: {
+            subject: `🫐 Tilausvahvistus ${orderNumber}`,
+            html: EmailTemplate(orderList, delivery, orderNumber, deliveryAddress),
+        },
     })
 }
 

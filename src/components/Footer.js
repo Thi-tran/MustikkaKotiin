@@ -7,20 +7,20 @@ class Footer extends Component {
             <footer>
                 <div className="row">
                     <ul className="footer-nav mx-auto">
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <Scrollchor to="#About" animate={{ offset: -50, duration: 600 }} className="nav-text">Tarina</Scrollchor>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
-                            <Scrollchor to="#Contact" animate={{ offset: -50, duration: 600 }} className="nav-text">Tilaa</Scrollchor>
+                            <Scrollchor to="#Contact" animate={{ offset: -50, duration: 600 }} className="nav-text">Ohje</Scrollchor>
                         </li>
                         <li className="nav-item">
                             <Scrollchor to="#Product" animate={{ offset: -50, duration: 600 }} className="nav-text">Mustikat</Scrollchor>
                         </li>
                         <li className="nav-item">
-                            <Scrollchor to="#Testimonial" animate={{ offset: -50, duration: 600 }} className="nav-text">Muistoottelu</Scrollchor>
+                            <Scrollchor to="#Testimonial" animate={{ offset: -50, duration: 600 }} className="nav-text">Kokemuksia</Scrollchor>
                         </li>
                         <li className="nav-item">
-                            <Scrollchor to="#Question" animate={{ offset: -50, duration: 600 }} className="nav-text">Kysymys</Scrollchor>
+                            <Scrollchor to="#Question" animate={{ offset: -50, duration: 600 }} className="nav-text">Yhteydenotto</Scrollchor>
                         </li>
                     </ul>
                 </div>
