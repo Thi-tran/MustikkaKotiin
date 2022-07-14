@@ -6,7 +6,7 @@ export const isDeliveryOrder = (delivery) => {
 }
 
 export const getDeliveryMethodText = (delivery) => {
-  return `${isDeliveryOrder(delivery) ? 'Kotiin toimistus' : 'Noudat Työpajankatu 5'}`;
+  return `${isDeliveryOrder(delivery) ? 'Kotiin toimistus' : 'Noudat Työpajankatu 5 klo 14-15'}`;
 }
 
 export const getOrderTotal = (orderList) => {
