@@ -63,9 +63,15 @@ class NavbarHomePage extends Component {
     }
   }
 
-  imageClick = () => {
-    console.log('click')
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.orderList !== this.props.orderList) {
+      this.setState({
+        orderList: this.props.orderList
+      })
+    }
   }
+
   onCheckCart = () => {
     this.setState({ open: true });
   }
@@ -89,14 +95,14 @@ class NavbarHomePage extends Component {
   }
 
   onHandleIncBox = (id) => {
-    const orderList = this.state.orderList;
+    const orderList = [...this.state.orderList];
     orderList[`${id}`].order++;
     this.setState({ orderList });
     localStorage.setItem(`order-${id}`, orderList[`${id}`].order);
   }
 
   onHandleDecBox = (id) => {
-    const orderList = this.state.orderList;
+    const orderList = [...this.state.orderList];
     orderList[`${id}`].order--;
     this.setState({ orderList });
     localStorage.setItem(`order-${id}`, orderList[`${id}`].order);
@@ -104,7 +110,7 @@ class NavbarHomePage extends Component {
 
 
   onHandleRemoveBox = (id) => {
-    const orderList = this.state.orderList;
+    const orderList = [...this.state.orderList];
     orderList[`${id}`].order = 0;
     this.setState({ orderList });
 
@@ -130,8 +136,7 @@ class NavbarHomePage extends Component {
     this.setState({
       orderSent: true,
       open: false,
-      thankYouDialog: true,
-      orderList: initalOrderList
+      thankYouDialog: true
     });
   }
 
@@ -155,8 +160,6 @@ class NavbarHomePage extends Component {
     if (((delivery === "home") && (name) && (number) && (email) && (address) && (post) && (city)) ||
       ((delivery === "pickup") && (name) && (number) && (email)))
       canOrder = true;
-
-    console.log(this.state.orderList);
 
     return (
       <span >

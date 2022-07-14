@@ -18,8 +18,8 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            productList: initalProductList,
-            orderList: initalOrderList,
+            productList: JSON.parse(JSON.stringify(initalProductList)),
+            orderList: JSON.parse(JSON.stringify(initalOrderList)),
             makeOrder: '',
             savedOrder: '',
             addOrderToCart: false,
@@ -45,8 +45,9 @@ class HomePage extends Component {
         });
 
     }
+
     onHandleAddBox = (id) => {
-        const productList = this.state.productList;
+        const productList = [...this.state.productList];
         productList[`${id}`].numBox++;
         this.setState({
             productList
@@ -54,7 +55,7 @@ class HomePage extends Component {
     }
 
     onHandleDeleteBox = (id) => {
-        const productList = this.state.productList;
+        const productList = [...this.state.productList];
         if (productList[`${id}`].numBox > 0) {
             productList[`${id}`].numBox--
         }
@@ -64,28 +65,23 @@ class HomePage extends Component {
     }
 
     onHandleAddBoxToCart = (id) => {
-        const orderList = this.state.orderList;
-        const productList = this.state.productList;
+        const { orderList, productList } = this.state;
+
         orderList[`${id}`].order = Number(orderList[`${id}`].order) + Number(productList[`${id}`].numBox);
         this.setState({
             orderList,
             makeOrder: true,
             addOrderToCart: true
         })
-        setTimeout(() => {
-            this.setState({ addOrderToCart: false })
-        }, 1000)
-
         // Local Storage stuff
         localStorage.setItem('savedOrder', true);
         localStorage.setItem(`order-${id}`, productList[`${id}`].numBox);
-
     }
 
     resetOrder = () => {
         this.setState({
-            orderList: initalOrderList,
-            productList: initalProductList,
+            orderList: JSON.parse(JSON.stringify(initalOrderList)),
+            productList: JSON.parse(JSON.stringify(initalProductList)),
             makeOrder: false
         });
 
@@ -98,6 +94,7 @@ class HomePage extends Component {
 
         let displaySaveOrder = false;
         if (savedOrder === "true") displaySaveOrder = true;
+
         return (
             <div className="scrolling-box">
                 <UserContext.Provider value={{ productList, onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart }}>
