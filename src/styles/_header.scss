@@ -1,5 +1,5 @@
 header{
-    height: 80vh;
+    height: 90vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.493),rgba(0, 0, 0, 0.514)),url(img/banner.jpg);
     display: block;
     background-size: cover;
@@ -8,15 +8,13 @@ header{
 }
 
 
-
 .hero-text-box{
     position: absolute;
 
     /* Make the element in the center, with top just abit higher 40%  */
     top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%);  
-
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -47,8 +45,4 @@ header{
 .btn:hover{
     background-color: #3c40c6;
     color: #fff;
-}
-
-.mustikat-text {
-
 }

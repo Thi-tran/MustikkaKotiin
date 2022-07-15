@@ -7,7 +7,7 @@ class Pics extends Component {
                 <ul className="meals-showcase clearfix">
                     <li>
                         <figure className="meal-photo">
-                            <img src='img/Meals/1.gif' alt="pic" />
+                            <img src='img/Meals/1.jpg' alt="pic" />
                         </figure>
                     </li>
                     <li>
