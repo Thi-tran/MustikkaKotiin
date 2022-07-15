@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
-import About from '../components/About';
+// import About from '../components/About';
 import Steps from '../components/Steps';
 import Pics from '../components/Pics';
 import Products from '../components/Products';

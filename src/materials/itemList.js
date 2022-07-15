@@ -22,14 +22,14 @@ export const initalProductList = [
 export const initalOrderList = [
     {
         id: 0,
-        title: '5kg laatikko',
+        title: 'MUSTIKKA 5KG',
         mainPic: 'img/5kg-box-nobg.jpg',
         order: 0,
         price: 59.99
     },
     {
         id: 1,
-        title: '3kg laatikko',
+        title: 'MUSTIKKA 5KG',
         mainPic: 'img/3kg-box-nobg.jpg',
         order: 0,
         price: 39.99

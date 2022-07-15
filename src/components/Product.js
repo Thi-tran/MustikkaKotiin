@@ -30,9 +30,10 @@ class Product extends Component {
     render() {
         const { classes } = this.props;
         const { id, title, mainPic, description, price, numBox } = this.props
+        console.log(id)
         return (
             <UserContext.Consumer>
-                {({ onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart }) =>
+                {({ productList, onHandleAddBox, onHandleDeleteBox, onHandleAddBoxToCart }) =>
                     <div className="col mb-3">
                         <Card className="card">
                             <CardHeader
@@ -61,14 +62,13 @@ class Product extends Component {
                                         <AddIcon onClick={() => onHandleAddBox(id)} />
                                     </Fab>
                                     <Fab size="small" aria-label="Remove" className="mx-1">
-                                        <RemoveIcon onClick={() => onHandleDeleteBox(id)} />
+                                        {(numBox > 0) && <RemoveIcon onClick={() => onHandleDeleteBox(id)} />}
                                     </Fab>
                                 </div>
                             </CardActions>
                             <CardActions disableActionSpacing>
-
                                 <Fab variant="extended" color="primary" aria-label="Add" className="mx-auto mb-2"
-                                    onClick={() => onHandleAddBoxToCart(id)}
+                                    onClick={() => onHandleAddBoxToCart(id)} disabled={numBox === 0}
                                 >
                                     LISÄÄ OSTOSKORIIN
                                 </Fab>

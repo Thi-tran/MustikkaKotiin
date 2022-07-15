@@ -18,7 +18,6 @@ import Button from '@material-ui/core/Button';
 import SnackBar from './SnackBar';
 import { roundedTwoDecimals } from './utils';
 import { PICKUP_ADDRESS } from '../email/utils';
-import { initalOrderList } from '../materials/itemList';
 
 const styles = theme => ({
   dialogTitle: {
