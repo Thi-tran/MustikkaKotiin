@@ -23,7 +23,13 @@ const items = [
 const Header = () => {
     return (
         <div className="" id="Home">
-            <Carousel interval={5000}>
+            <Carousel interval={5000} navButtonsAlwaysVisible navButtonsProps={{
+                style: {
+                    opacity: '0.8',
+                    padding: 5
+                }
+            }}
+            >
                 {items.map((item, i) => <Item key={i} item={item} />)}
             </Carousel>
         </div>
