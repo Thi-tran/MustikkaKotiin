@@ -31,7 +31,7 @@ class Footer extends Component {
                     </ul>
                 </div>
                 <div className="d-flex justify-content-around pb-2">
-                    <div className="footer-text">©2018 by MustikkaKotiin (Y-tunnus: 2840945-7)</div>
+                    <div className="footer-text">©2022 by MustikkaKotiin</div>
                     <div className="footer-text">All data is protected under GDPR </div>
                 </div>
             </footer>
