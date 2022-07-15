@@ -359,7 +359,7 @@ class NavbarHomePage extends Component {
                       <label htmlFor="exampleInputEmail1">Lempinoutaaika</label>
                       <div className="row">
                         <div className="form-check mx-1">
-                          <input className="form-check-input" type="checkbox" value="8-9" onChange={(e) => this.onHandlePickupTime(e.target.value)} />
+                          <input className="form-check-input" type="checkbox" value="14-15" onChange={(e) => this.onHandlePickupTime(e.target.value)} />
                           <label className="form-check-label" htmlFor="gridRadios1">
                             14.00 - 15.00
                           </label>
