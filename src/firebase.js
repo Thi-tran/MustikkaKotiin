@@ -44,7 +44,7 @@ export const addOrder = (delivery, name, address, post, number, email, city, del
         to: email,
         message: {
             subject: `🫐 Tilausvahvistus ${orderNumber}`,
-            html: EmailTemplate(orderList, delivery, orderNumber, deliveryAddress),
+            html: EmailTemplate(orderList, delivery, orderNumber, deliveryAddress, number),
         },
     })
 }

@@ -1,7 +1,7 @@
 import { getOrderContent } from "./orderList";
 import { DELIVERY_FEE, getDeliveryMethodText, getOrderTotal, isDeliveryOrder, PICKUP_ADDRESS } from "./utils";
 
-export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress) => `
+export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress, number) => `
 <div>
   <div style="text-align: left; text-align-last: auto;">
     <div style="margin: 0px auto; max-width: 600px;">
@@ -541,7 +541,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress)
                               font-weight: normal;
                               line-height: 13px;
                             "
-                            >Soitamme numeroon +358457872534, kun
+                            >Soitamme numeroon ${number}, kun
                             pakettisi on saatavilla.</span
                           >
                         </div>
