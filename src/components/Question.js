@@ -3,6 +3,7 @@ import mePic from '../styles/img/me.jpg';
 
 import SnackBar from './SnackBar';
 import Fab from '@material-ui/core/Fab';
+import { addQuestion } from '../firebase';
 
 const initialState = {
     name: '',
@@ -26,8 +27,9 @@ class Question extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        const { name, email, question } = this.state;
+        addQuestion(name, email, question);
 
-        // addQuestion(name, email, question);
         this.setState({
             ...initialState,
             snackbar: true
