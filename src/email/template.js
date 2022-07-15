@@ -793,7 +793,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                           >
                             <tbody>
                               <tr>
-                                <td valign="top" width="18%">
+                                <td valign="top" width="25%">
                                   <div
                                     style="
                                       text-align: left;
@@ -814,7 +814,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                     </span>
                                   </div>
                                 </td>
-                                <td valign="top" width="23%">
+                                <td valign="top" width="25%">
                                   <div
                                     style="
                                       text-align: right;
@@ -835,7 +835,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                     >
                                   </div>
                                 </td>
-                                <td valign="top" width="59%">
+                                <td valign="top" width="30%">
                                   <span style="line-height: 13px;">&nbsp;</span>
                                   <div
                                     style="
@@ -846,7 +846,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                 </td>
                               </tr>
                               <tr>
-                                <td valign="top" width="18%">
+                                <td valign="top" width="25%">
                                   <div
                                     style="
                                       text-align: left;
@@ -867,7 +867,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                     >
                                   </div >
                                 </td >
-                                <td valign="top" width="23%">
+                                <td valign="top" width="25%">
                                   <div
                                     style="
                                       text-align: right;
@@ -888,7 +888,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                     >
                                   </div>
                                 </td>
-                                <td valign="top" width="59%">
+                                <td valign="top" width="30%">
                                   <span style="line-height: 13px;">&nbsp;</span>
                                   <div
                                     style="
@@ -899,7 +899,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                 </td>
                               </tr >
   <tr>
-    <td valign="top" width="18%">
+    <td valign="top" width="25%">
       <div
         style="
                                       text-align: left;
@@ -920,7 +920,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
         >
       </div>
     </td>
-    <td valign="top" width="23%">
+    <td valign="top" width="25%">
       <div
         style="
                                       text-align: right;
@@ -941,7 +941,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
         >
       </div>
     </td>
-    <td valign="top" width="59%">
+    <td valign="top" width="30%">
       <span style="line-height: 13px;">&nbsp;</span>
       <div
         style="
