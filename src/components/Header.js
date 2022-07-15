@@ -23,7 +23,7 @@ const items = [
 const Header = () => {
     return (
         <div className="" id="Home">
-            <Carousel>
+            <Carousel interval={5000}>
                 {items.map((item, i) => <Item key={i} item={item} />)}
             </Carousel>
         </div>
