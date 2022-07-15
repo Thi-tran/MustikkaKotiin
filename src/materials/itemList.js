@@ -1,7 +1,7 @@
 export const initalProductList = [
     {
         id: 0,
-        title: '5KG LAATIKKO',
+        title: 'MUSTIKKA 5KG',
         mainPic: 'img/5kg-box-nobg.jpg',
         description: 'Tällä 5 kg laatikolla nautit mustikasta koko kesän ja voit jopa jättää osan talven varalle. Suositeltavaa säilyttää alle 5 °C tai pakastaa pienissä pusseissa.',
         pics: [],
@@ -10,7 +10,7 @@ export const initalProductList = [
     },
     {
         id: 1,
-        title: '3KG LAATIKKO',
+        title: 'MUSTIKKA 3KG',
         mainPic: 'img/3kg-box-nobg.jpg',
         description: 'Tämä 3 kg laatikko on tarkoitettu pienempään jääkaappiin. Tällä pääset nauttimaan "kesän mausta", mutta tilaa jää muillekin asioille. Suositeltavaa säilyttää alle 5 °C.',
         pics: [],
