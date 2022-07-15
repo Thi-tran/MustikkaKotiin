@@ -937,7 +937,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                         font-weight: bold;
                                         line-height: 13px;
                                       "
-        >${isDeliveryOrder(delivery) ? getOrderTotal(orderList) + DELIVERY_FEE : getOrderTotal(orderList)}</span
+        >${isDeliveryOrder(delivery) ? (getOrderTotal(orderList) + DELIVERY_FEE).toFixed(2) : (getOrderTotal(orderList)).toFixed(2)}</span
         >
       </div>
     </td>
