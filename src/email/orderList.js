@@ -1,8 +1,10 @@
+import { TITLE_MUSTIKKA_3KG, TITLE_MUSTIKKA_5KG } from "../materials/itemList";
+
 const getProductImage = (order) => {
   switch (order.title) {
-    case '5kg laatikko':
+    case TITLE_MUSTIKKA_5KG:
       return 'https://s3.eu-north-1.amazonaws.com/www.mustikkakotiin.fi/img/5kg-box-nobg.jpg';
-    case '3kg laatikko':
+    case TITLE_MUSTIKKA_3KG:
       return 'https://s3.eu-north-1.amazonaws.com/www.mustikkakotiin.fi/img/3kg-box-nobg.jpg';
     default: return ''
   }
