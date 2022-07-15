@@ -8,7 +8,7 @@ export const initalProductList = [
         mainPic: 'img/5kg-box-nobg.jpg',
         description: 'Tällä 5 kg laatikolla nautit mustikasta koko kesän ja voit jopa jättää osan talven varalle. Suositeltavaa säilyttää alle 5 °C tai pakastaa pienissä pusseissa.',
         pics: [],
-        numBox: 1,
+        numBox: 0,
         price: 59.99
     },
     {
