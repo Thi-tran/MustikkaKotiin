@@ -884,7 +884,7 @@ export const EmailTemplate = (orderList, delivery, orderNumber, deliveryAddress,
                                         font-weight: normal;
                                         line-height: 13px;
                                       "
-                                      >${isDeliveryOrder(delivery) ? DELIVERY_FEE : '0'},00</span
+                                      >${isDeliveryOrder(delivery) ? DELIVERY_FEE : '0'}.00</span
                                     >
                                   </div>
                                 </td>
