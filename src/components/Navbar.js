@@ -422,16 +422,8 @@ class NavbarHomePage extends Component {
             className="classes.content"
           >
             <div className="row" style={{ justifyContent: 'center', paddingBottom: 20 }}>
-              <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/smiling-face-with-smiling-eyes_1f60a.png"
+              <img src="https://www.limepop.fi/WebRoot/vilkasfi01/Shops/2014113007/54EC/E18A/1F34/A913/4764/0A28/1010/978B/Mustikka_ml.jpg"
                 alt="Smiley Face"
-                style={{ height: 40 }}
-              />
-              <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/heavy-black-heart_2764.png"
-                alt="Heart"
-                style={{ height: 40 }}
-              />
-              <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/198/glowing-star_1f31f.png"
-                alt="Star"
                 style={{ height: 40 }}
               />
             </div>
