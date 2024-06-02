@@ -4,12 +4,12 @@ import { EmailTemplate } from './email/template';
 
 // Initialize Firebase
 const config = {
-    apiKey: process.env.REACT_APP_FIREBASE_API,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_SENDER_ID,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    apiKey: 'AIzaSyBgoYwIodHCBaTwsnYmDXLTAQLCfyq_7SU',
+    authDomain: 'mustikkakotiin.firebaseapp.com',
+    projectId: 'mustikkakotiin',
+    storageBucket: 'mustikkakotiin.appspot.com',
+    messagingSenderId: '25641049607',
+    databaseURL: 'https://mustikkakotiin.eur3.firebaseio.com',
 };
 firebase.initializeApp(config);
 
